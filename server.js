@@ -43,5 +43,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`Vantage listo en http://localhost:${port}`);
+  console.log(`VANTAGE listo en http://localhost:${port}`);
 });

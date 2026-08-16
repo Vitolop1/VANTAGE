@@ -1,6 +1,6 @@
-# Vantage — sitio web
+# VANTAGE — sitio web
 
-Landing page base para Vantage (asesoramiento académico y deportivo, Argentina → Estados Unidos).
+Landing page base para VANTAGE (asesoramiento académico y deportivo, Argentina → Estados Unidos).
 
 ## Estructura
 

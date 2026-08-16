@@ -6,305 +6,426 @@
 <title>VANTAGE — Tu ventaja para estudiar y jugar en Estados Unidos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#10202E;
     --blue:#1D4E89;
-    --blue-deep:#123661;
     --blue-tint:#EAF1F9;
     --gold:#C9972E;
     --paper:#FBFAF7;
+    --white:#FFFFFF;
     --line:#E1DFD7;
     --text:#1B2530;
     --text-soft:#5C6570;
+    --green:#25D366;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter', sans-serif;
-    color:var(--text);
-    background:var(--paper);
-    line-height:1.6;
-  }
-  h1,h2,h3,.wordmark{ font-family:'Fraunces', serif; }
-  a{ color:inherit; text-decoration:none; }
-  img{ max-width:100%; display:block; }
-  .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
-  section{ padding:96px 0; }
+  body{font-family:'Inter', sans-serif; color:var(--text); background:var(--paper); line-height:1.6;}
+  h1,h2,h3,.wordmark{font-family:'Fraunces', serif;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+  section{padding:92px 0;}
 
-  /* ---------- wordmark (signature element) ---------- */
-  .wordmark{ font-weight:600; letter-spacing:0.01em; }
-  .wordmark .hi{ color:var(--blue); }
-  .wordmark .grp{ color:var(--gold); border-bottom:2px solid var(--gold); padding-bottom:2px; }
+  .wordmark{font-weight:600; letter-spacing:0.01em;}
+  .wordmark .hi,.wordmark .grp{color:var(--blue);}
+  .wordmark .grp{border-bottom:2px solid var(--blue); padding-bottom:2px;}
 
-  /* ---------- nav ---------- */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(251,250,247,0.92); backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  nav{ display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1120px; margin:0 auto; }
-  .nav-logo{ font-size:22px; }
-  .nav-links{ display:flex; gap:32px; font-size:14px; font-weight:500; color:var(--text-soft); }
-  .nav-links a{ margin-left:32px; }
-  .nav-links a:first-child{ margin-left:0; }
-  .nav-links a:hover{ color:var(--blue); }
-  .nav-cta{
-    background:#25D366; color:#fff; padding:10px 18px; border-radius:8px;
-    font-size:14px; font-weight:600; white-space:nowrap;
-  }
-  .nav-mobile-hide{ display:flex; }
-  @media (max-width:760px){ .nav-mobile-hide{ display:none; } }
+  .topbar{background:var(--navy); color:#D9E2EC; font-size:13px;}
+  .topbar .wrap{min-height:38px; display:flex; align-items:center; justify-content:space-between; gap:18px;}
+  .topbar-links{display:flex; gap:18px; flex-wrap:wrap;}
+  .topbar strong{color:#fff; font-weight:600;}
 
-  /* ---------- hero ---------- */
-  .hero{ padding:120px 0 100px; text-align:center; }
-  .eyebrow{
-    font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
-    color:var(--blue); font-weight:600; margin-bottom:22px;
-  }
-  .hero .wordmark{ font-size:clamp(48px, 10vw, 108px); line-height:1; }
-  .hero p.tag{
-    max-width:560px; margin:26px auto 0; font-size:19px; color:var(--text-soft);
-  }
-  .hero-ctas{ margin-top:40px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
-  .btn{
-    display:inline-block; padding:14px 28px; border-radius:8px; font-weight:600; font-size:15px;
-  }
-  .btn-primary{ background:#25D366; color:#fff; }
-  .btn-secondary{ background:transparent; color:var(--navy); border:1px solid var(--line); }
-  .btn-secondary:hover{ border-color:var(--blue); color:var(--blue); }
-
-  .initials-row{
-    margin-top:56px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;
-  }
-  .chip{
-    font-size:12.5px; color:var(--text-soft); background:var(--blue-tint);
-    padding:7px 14px; border-radius:999px;
-  }
-  .chip b{ color:var(--navy); }
-
-  /* ---------- section heads ---------- */
-  .head{ max-width:640px; margin:0 auto 56px; text-align:center; }
-  .head .eyebrow{ margin-bottom:14px; }
-  .head h2{ font-size:34px; font-weight:500; }
-  .head p{ margin-top:14px; color:var(--text-soft); font-size:16px; }
-
-  /* ---------- proceso (real sequence -> numbered) ---------- */
-  .proceso{ background:var(--navy); color:#fff; }
-  .proceso .head h2, .proceso .eyebrow{ color:#fff; }
-  .proceso .eyebrow{ color:var(--gold); }
-  .proceso .head p{ color:#AEB9C4; }
-  .steps{ display:flex; flex-direction:column; }
-  .step{
-    display:grid; grid-template-columns:64px 1fr auto; gap:20px; align-items:start;
-    padding:26px 0; border-top:1px solid rgba(255,255,255,0.12);
-  }
-  .step:last-child{ border-bottom:1px solid rgba(255,255,255,0.12); }
-  .step .n{ font-family:'Fraunces', serif; font-size:26px; color:var(--gold); }
-  .step h3{ font-size:17px; font-weight:500; margin-bottom:4px; }
-  .step p{ color:#AEB9C4; font-size:14.5px; max-width:520px; }
-  .step .cost{ font-size:13px; color:#fff; opacity:0.75; white-space:nowrap; align-self:center; }
-  @media (max-width:600px){
-    .step{ grid-template-columns:40px 1fr; }
-    .step .cost{ grid-column:2; margin-top:6px; }
+  header{position:sticky; top:0; z-index:50; background:rgba(251,250,247,0.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  nav{display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 28px; max-width:1120px; margin:0 auto;}
+  .nav-logo{font-size:22px; white-space:nowrap;}
+  .nav-links{display:flex; gap:24px; font-size:14px; font-weight:600; color:var(--text-soft);}
+  .nav-links a:hover{color:var(--blue);}
+  .nav-cta,.btn-primary{background:var(--green); color:#fff; box-shadow:0 10px 22px rgba(37,211,102,0.2);}
+  .nav-cta{padding:10px 18px; border-radius:8px; font-size:14px; font-weight:700; white-space:nowrap;}
+  @media (max-width:860px){
+    .topbar .wrap{align-items:flex-start; flex-direction:column; padding-top:10px; padding-bottom:10px;}
+    .nav-links{display:none;}
   }
 
-  /* ---------- becas ---------- */
-  .becas-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:20px; }
-  .beca-card{
-    border:1px solid var(--line); border-radius:14px; padding:32px 28px; background:#fff;
-  }
-  .beca-card.flag{ border-color:var(--blue); background:var(--blue-tint); }
-  .beca-card .tag-pill{
-    display:inline-block; font-size:11px; font-weight:600; letter-spacing:0.06em;
-    text-transform:uppercase; color:var(--blue); background:#fff; border:1px solid var(--blue);
-    padding:4px 10px; border-radius:999px; margin-bottom:16px;
-  }
-  .beca-card h3{ font-size:20px; font-weight:500; margin-bottom:10px; }
-  .beca-card p{ color:var(--text-soft); font-size:14.5px; }
-  .beca-card.soon{ opacity:0.55; }
-  .beca-card.soon .tag-pill{ color:var(--text-soft); border-color:var(--line); }
+  .hero{padding:92px 0 76px; background:linear-gradient(120deg, rgba(234,241,249,0.95), rgba(251,250,247,0.82)), radial-gradient(circle at 82% 28%, rgba(201,151,46,0.16), transparent 30%);}
+  .hero-grid{display:grid; grid-template-columns:minmax(0, 1.08fr) minmax(320px, 0.92fr); gap:48px; align-items:center;}
+  .eyebrow{font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue); font-weight:700; margin-bottom:18px;}
+  .hero .wordmark{font-size:clamp(58px, 10vw, 112px); line-height:0.94;}
+  .hero p.tag{max-width:640px; margin-top:26px; font-size:20px; color:var(--text-soft);}
+  .hero-ctas{margin-top:36px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:13px 24px; border-radius:8px; font-weight:700; font-size:15px;}
+  .btn-secondary{background:#fff; color:var(--navy); border:1px solid var(--line);}
+  .btn-secondary:hover{border-color:var(--blue); color:var(--blue);}
+  .hero-card{background:var(--white); border:1px solid var(--line); border-radius:8px; padding:28px; box-shadow:0 18px 50px rgba(16,32,46,0.09);}
+  .hero-card h2{font-size:28px; font-weight:500; line-height:1.15;}
+  .hero-card p{color:var(--text-soft); margin-top:10px;}
+  .profile-list{display:grid; gap:12px; margin-top:24px;}
+  .profile-item{display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-top:1px solid var(--line); font-size:14px;}
+  .profile-item b{color:var(--navy);}
+  .profile-item span{color:var(--text-soft); text-align:right;}
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr;} .hero-card{padding:24px;}}
 
-  /* ---------- nosotros ---------- */
-  .team-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:24px; }
-  .team-card{ padding:28px; border:1px solid var(--line); border-radius:14px; }
-  .team-card .role{ font-size:12px; color:var(--gold); font-weight:600; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; }
-  .team-card h3{ font-size:19px; font-weight:500; margin-bottom:10px; }
-  .team-card p{ font-size:14.5px; color:var(--text-soft); }
+  .head{max-width:690px; margin:0 auto 54px; text-align:center;}
+  .head .eyebrow{margin-bottom:12px;}
+  .head h2{font-size:clamp(30px, 4vw, 42px); line-height:1.14; font-weight:500;}
+  .head p{margin-top:14px; color:var(--text-soft); font-size:16px;}
 
-  /* ---------- contacto ---------- */
-  .contacto{ background:var(--blue-tint); text-align:center; }
-  .contacto h2{ font-size:32px; font-weight:500; }
-  .contacto p{ color:var(--text-soft); margin-top:14px; max-width:480px; margin-left:auto; margin-right:auto; }
-  .contacto .btn{ margin-top:32px; }
+  .showcase{padding:54px 0; background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .showcase-box{display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center;}
+  .showcase h2{font-size:28px; font-weight:500;}
+  .showcase p{color:var(--text-soft); margin-top:8px; max-width:720px;}
+  @media (max-width:720px){.showcase-box{grid-template-columns:1fr;}}
 
-  /* ---------- footer ---------- */
-  footer{ padding:48px 0; border-top:1px solid var(--line); }
-  .foot-row{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; }
-  .monogram{
-    width:44px; height:44px; border-radius:50%; background:var(--blue-tint);
-    display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:600; color:var(--blue);
-  }
-  .foot-links{ display:flex; gap:20px; font-size:13px; color:var(--text-soft); }
-  .foot-links a{ margin-left:20px; }
-  .foot-links a:first-child{ margin-left:0; }
-  .foot-copy{ font-size:12.5px; color:var(--text-soft); margin-top:24px; text-align:center; }
+  .proceso{background:var(--navy); color:#fff;}
+  .proceso .head h2{color:#fff;}
+  .proceso .eyebrow{color:var(--gold);}
+  .proceso .head p{color:#AEB9C4;}
+  .steps{display:flex; flex-direction:column;}
+  .step{display:grid; grid-template-columns:64px 1fr auto; gap:20px; align-items:start; padding:26px 0; border-top:1px solid rgba(255,255,255,0.12);}
+  .step:last-child{border-bottom:1px solid rgba(255,255,255,0.12);}
+  .step .n{font-family:'Fraunces', serif; font-size:26px; color:var(--gold);}
+  .step h3{font-size:17px; font-weight:600; margin-bottom:4px;}
+  .step p{color:#AEB9C4; font-size:14.5px; max-width:560px;}
+  .step .cost{font-size:13px; color:#fff; opacity:0.75; white-space:nowrap; align-self:center;}
+  @media (max-width:600px){.step{grid-template-columns:40px 1fr;} .step .cost{grid-column:2; margin-top:6px;}}
+
+  .becas-grid,.values-grid,.testimonial-grid,.faq-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:20px;}
+  .beca-card,.value-card,.testimonial-card,.faq-card{border:1px solid var(--line); border-radius:8px; padding:28px; background:#fff;}
+  .beca-card.flag{border-color:var(--blue); background:var(--blue-tint);}
+  .tag-pill{display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--blue); background:#fff; border:1px solid var(--blue); padding:4px 10px; border-radius:999px; margin-bottom:16px;}
+  .beca-card h3,.value-card h3,.testimonial-card h3,.faq-card h3{font-size:20px; font-weight:500; margin-bottom:10px;}
+  .beca-card p,.value-card p,.testimonial-card p,.faq-card p{color:var(--text-soft); font-size:14.5px;}
+  .beca-card.soon{opacity:0.74;}
+  .beca-card.soon .tag-pill{color:var(--text-soft); border-color:var(--line);}
+
+  .nosotros{background:#fff;}
+  .team-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+  .team-card{padding:28px; border:1px solid var(--line); border-radius:8px; background:var(--paper);}
+  .team-card .role{font-size:12px; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px;}
+  .team-card h3{font-size:19px; font-weight:500; margin-bottom:10px;}
+  .team-card p{font-size:14.5px; color:var(--text-soft);}
+
+  .proof{background:var(--blue-tint);}
+  .proof-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .proof-item{background:#fff; padding:34px 28px; text-align:center;}
+  .proof-item strong{display:block; font-family:'Fraunces', serif; font-size:42px; line-height:1; color:var(--blue); margin-bottom:10px;}
+  .proof-item span{color:var(--text-soft); font-size:14px;}
+  @media (max-width:720px){.proof-grid{grid-template-columns:1fr;}}
+
+  .values{background:#fff;}
+  .value-card h3{color:var(--blue);}
+  .testimonial-card{display:flex; flex-direction:column; min-height:220px;}
+  .testimonial-card p{font-size:15px;}
+  .testimonial-card .person{margin-top:auto; padding-top:22px; color:var(--navy); font-weight:700; font-size:14px;}
+  .placeholder-note{color:var(--text-soft); font-size:13px; text-align:center; margin-top:22px;}
+
+  .contacto{background:var(--navy); color:#fff;}
+  .contact-box{display:grid; grid-template-columns:1fr minmax(280px, 390px); gap:42px; align-items:start;}
+  .contacto h2{font-size:clamp(30px, 4vw, 42px); font-weight:500; line-height:1.12;}
+  .contacto p{color:#B9C5D1; margin-top:14px; max-width:560px;}
+  .mini-form{background:#fff; border-radius:8px; padding:24px; display:grid; gap:12px;}
+  .mini-form input,.mini-form select{width:100%; min-height:44px; border:1px solid var(--line); border-radius:8px; padding:0 12px; font:inherit;}
+  .mini-form .btn{border:0; cursor:pointer; width:100%;}
+  @media (max-width:820px){.contact-box{grid-template-columns:1fr;}}
+
+  footer{padding:48px 0; border-top:1px solid var(--line);}
+  .foot-row{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;}
+  .monogram{width:44px; height:44px; border-radius:50%; background:var(--blue-tint); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:var(--blue);}
+  .foot-links{display:flex; gap:20px; flex-wrap:wrap; font-size:13px; color:var(--text-soft);}
+  .foot-copy{font-size:12.5px; color:var(--text-soft); margin-top:24px; text-align:center;}
 </style>
 </head>
 <body>
 
+<div class="topbar">
+  <div class="wrap">
+    <span><strong>VANTAGE</strong> · Becas deportivas y acompañamiento universitario</span>
+    <div class="topbar-links">
+      <a href="mailto:hola@vantage.com">hola@vantage.com</a>
+      <a href="#contacto">Consulta gratuita</a>
+    </div>
+  </div>
+</div>
+
 <header>
   <nav>
-    <a href="#" class="nav-logo wordmark"><span class="hi">V</span>a<span class="hi">n</span>t<span class="grp">age</span></a>
-    <div class="nav-links nav-mobile-hide">
-      <a href="#proceso">Cómo funciona</a>
+    <a href="#" class="nav-logo wordmark"><span class="hi">V</span>A<span class="hi">N</span>T<span class="grp">AGE</span></a>
+    <div class="nav-links">
+      <a href="#proceso">Proceso</a>
       <a href="#becas">Becas</a>
-      <a href="#nosotros">Nosotros</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#faq">FAQ</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <a href="#" class="nav-cta">WhatsApp</a>
+    <a href="#contacto" class="nav-cta">WhatsApp</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Asesoramiento académico y deportivo · Argentina → Estados Unidos</div>
-    <h1 class="wordmark"><span class="hi">V</span>a<span class="hi">n</span>t<span class="grp">age</span></h1>
-    <p class="tag">Tu ventaja para estudiar y jugar al rugby en universidades de Estados Unidos — guiados por quienes ya recorrieron ese camino.</p>
-    <div class="hero-ctas">
-      <a href="#" class="btn btn-primary">Agendar reunión gratuita</a>
-      <a href="#proceso" class="btn btn-secondary">Cómo funciona</a>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Argentina → Estados Unidos</div>
+        <h1 class="wordmark"><span class="hi">V</span>A<span class="hi">N</span>T<span class="grp">AGE</span></h1>
+        <p class="tag">Asesoramiento académico y deportivo para jugadores de rugby que quieren estudiar, competir y crecer en universidades de Estados Unidos.</p>
+        <div class="hero-ctas">
+          <a href="#contacto" class="btn btn-primary">Agendar reunión gratuita</a>
+          <a href="#proceso" class="btn btn-secondary">Ver proceso</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="eyebrow">Tu perfil</div>
+        <h2>Primero entendemos si el camino tiene sentido para vos.</h2>
+        <p>Evaluamos nivel deportivo, situación académica, inglés, objetivos familiares y presupuesto antes de avanzar.</p>
+        <div class="profile-list">
+          <div class="profile-item"><b>Deporte</b><span>Rugby universitario</span></div>
+          <div class="profile-item"><b>Destino</b><span>Estados Unidos</span></div>
+          <div class="profile-item"><b>Inicio</b><span>Reunión sin costo</span></div>
+        </div>
+      </aside>
     </div>
-    <div class="initials-row">
-      <span class="chip"><b>V</b> — Vito</span>
-      <span class="chip"><b>A</b> — Agustín</span>
-      <span class="chip"><b>N</b> — Natalia</span>
-      <span class="chip"><b>G</b> — Genaro</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="proceso" id="proceso">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">El proceso</div>
-      <h2>Seis pasos, de punta a punta</h2>
-      <p>El mismo camino para cada familia, sin sorpresas en ninguna etapa.</p>
+  <section class="showcase" id="eventos">
+    <div class="wrap showcase-box">
+      <div>
+        <div class="eyebrow">Evaluación inicial</div>
+        <h2>Próximas reuniones y evaluaciones</h2>
+        <p>Cuando abramos fechas de scouting, charlas informativas o evaluaciones de perfil, este bloque va a funcionar como cartelera principal.</p>
+      </div>
+      <a href="#contacto" class="btn btn-secondary">Consultar disponibilidad</a>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="n">0</div>
-        <div><h3>Reunión informativa</h3><p>Diagnóstico gratuito con el chico y su familia sobre el sistema universitario de EE.UU.</p></div>
-        <div class="cost">Sin costo</div>
-      </div>
-      <div class="step">
-        <div class="n">1</div>
-        <div><h3>Perfil y postulación</h3><p>Armado de perfil deportivo y académico. Selección de universidades objetivo.</p></div>
-        <div class="cost">30% inicial</div>
-      </div>
-      <div class="step">
-        <div class="n">2</div>
-        <div><h3>Gestión con universidades</h3><p>Un mes de trabajo activo: contacto directo con cuerpos técnicos y admisiones.</p></div>
-        <div class="cost">Incluido</div>
-      </div>
-      <div class="step">
-        <div class="n">3</div>
-        <div><h3>Acompañamiento y espera</h3><p>Asesoramiento continuo mientras se esperan respuestas de las universidades.</p></div>
-        <div class="cost">2º pago</div>
-      </div>
-      <div class="step">
-        <div class="n">4</div>
-        <div><h3>Trámites y aceptación</h3><p>Visa, transferencias, becas, pasajes, housing, ingresos, trabajo, vacunas.</p></div>
-        <div class="cost">2º/3º pago</div>
-      </div>
-      <div class="step">
-        <div class="n">5</div>
-        <div><h3>Seguimiento continuo</h3><p>Acompañamiento durante la estadía y un eventual cambio de universidad.</p></div>
-        <div class="cost">Fee aparte</div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="becas">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Becas</div>
-      <h2>Empezamos por rugby</h2>
-      <p>Con lugar para crecer hacia otras disciplinas y becas académicas o culturales.</p>
+  <section class="proceso" id="proceso">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">El proceso</div>
+        <h2>Seis pasos, de punta a punta</h2>
+        <p>Un recorrido ordenado para que la familia entienda qué pasa antes, durante y después de la postulación.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="n">0</div>
+          <div><h3>Reunión informativa</h3><p>Diagnóstico inicial con el jugador y su familia sobre el sistema universitario de EE.UU.</p></div>
+          <div class="cost">Sin costo</div>
+        </div>
+        <div class="step">
+          <div class="n">1</div>
+          <div><h3>Perfil y postulación</h3><p>Armado de perfil deportivo y académico, video, datos clave y universidades objetivo.</p></div>
+          <div class="cost">Inicio</div>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <div><h3>Gestión con universidades</h3><p>Contacto con entrenadores, admisiones y programas alineados al perfil del jugador.</p></div>
+          <div class="cost">Incluido</div>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <div><h3>Acompañamiento y respuestas</h3><p>Seguimiento de conversaciones, próximos pasos, documentación y expectativas reales.</p></div>
+          <div class="cost">Seguimiento</div>
+        </div>
+        <div class="step">
+          <div class="n">4</div>
+          <div><h3>Trámites y aceptación</h3><p>Apoyo en visa, becas, housing, pasajes, ingresos, vacunas y preparación para viajar.</p></div>
+          <div class="cost">Cierre</div>
+        </div>
+        <div class="step">
+          <div class="n">5</div>
+          <div><h3>Continuidad en destino</h3><p>Acompañamiento durante la estadía y orientación ante cambios académicos o deportivos.</p></div>
+          <div class="cost">Opcional</div>
+        </div>
+      </div>
     </div>
-    <div class="becas-grid">
-      <div class="beca-card flag">
-        <span class="tag-pill">Disponible</span>
-        <h3>Rugby</h3>
-        <p>Scouting, armado de perfil y contacto directo con entrenadores universitarios en EE.UU.</p>
-      </div>
-      <div class="beca-card soon">
-        <span class="tag-pill">Próximamente</span>
-        <h3>Académicas</h3>
-        <p>Becas por rendimiento académico, sin componente deportivo.</p>
-      </div>
-      <div class="beca-card soon">
-        <span class="tag-pill">Próximamente</span>
-        <h3>Culturales</h3>
-        <p>Programas de intercambio y diversidad cultural.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="nosotros" style="background:#fff;">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Nosotros</div>
-      <h2>Adentro del sistema, no afuera</h2>
-      <p>Agustín y Genaro fueron jugadores de rugby y hoy son entrenadores universitarios en Estados Unidos.</p>
+  <section id="becas">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Becas</div>
+        <h2>Empezamos por rugby, con espacio para crecer</h2>
+        <p>La propuesta inicial está enfocada en rugby, pero la estructura permite sumar otros caminos cuando VANTAGE esté listo para ofrecerlos.</p>
+      </div>
+      <div class="becas-grid">
+        <div class="beca-card flag">
+          <span class="tag-pill">Disponible</span>
+          <h3>Rugby</h3>
+          <p>Scouting, armado de perfil y contacto directo con entrenadores universitarios en Estados Unidos.</p>
+        </div>
+        <div class="beca-card soon">
+          <span class="tag-pill">Próximamente</span>
+          <h3>Académicas</h3>
+          <p>Opciones para estudiantes con buen rendimiento académico y objetivos universitarios claros.</p>
+        </div>
+        <div class="beca-card soon">
+          <span class="tag-pill">Próximamente</span>
+          <h3>Culturales</h3>
+          <p>Programas de intercambio, diversidad cultural y experiencias formativas internacionales.</p>
+        </div>
+        <div class="beca-card soon">
+          <span class="tag-pill">Próximamente</span>
+          <h3>Otros deportes</h3>
+          <p>Una futura línea para ampliar la red deportiva sin perder foco ni calidad de seguimiento.</p>
+        </div>
+      </div>
     </div>
-    <div class="team-grid">
-      <div class="team-card">
-        <div class="role">Cara visible · Scouting</div>
-        <h3>Agustín</h3>
-        <p>Ex jugador de rugby y hoy entrenador universitario en EE.UU. A cargo del scouting deportivo y de las reuniones con cada familia.</p>
-      </div>
-      <div class="team-card">
-        <div class="role">Cara visible · Scouting</div>
-        <h3>Genaro Fesia</h3>
-        <p>Ex jugador de rugby y entrenador universitario. Trabaja junto a Agustín en la evaluación deportiva y el contacto con las universidades.</p>
-      </div>
-      <div class="team-card">
-        <div class="role">Digital</div>
-        <h3>Vito</h3>
-        <p>A cargo de la web, las redes y el acompañamiento digital de cada familia durante todo el proceso.</p>
-      </div>
-      <div class="team-card">
-        <div class="role">Administración</div>
-        <h3>Natalia</h3>
-        <p>Organiza la parte administrativa: cobros, documentación y seguimiento general de cada caso.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="contacto" id="contacto">
-  <div class="wrap">
-    <h2>Empecemos por una charla</h2>
-    <p>La primera reunión es gratuita — sin compromiso, para entender si el proceso tiene sentido para tu hijo o hija.</p>
-    <a href="#" class="btn btn-primary">Escribinos por WhatsApp</a>
-  </div>
-</section>
+  <section class="nosotros" id="nosotros">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Nosotros</div>
+        <h2>Adentro del sistema, no afuera</h2>
+        <p>Dos referentes con experiencia real en rugby universitario de Estados Unidos acompañan la evaluación deportiva y el contacto con programas.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="role">Rugby universitario</div>
+          <h3>Agustín</h3>
+          <p>Ex jugador de rugby y entrenador universitario en EE.UU. Acompaña la lectura deportiva del perfil y las conversaciones con familias.</p>
+        </div>
+        <div class="team-card">
+          <div class="role">Rugby universitario</div>
+          <h3>Genaro Fesia</h3>
+          <p>Entrenador universitario. Trabaja el contacto con programas, análisis deportivo y lectura realista de oportunidades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="wrap">
+      <div class="proof-grid">
+        <div class="proof-item">
+          <strong>1:1</strong>
+          <span>Acompañamiento personalizado para cada familia.</span>
+        </div>
+        <div class="proof-item">
+          <strong>6</strong>
+          <span>Etapas claras desde el diagnóstico hasta la llegada.</span>
+        </div>
+        <div class="proof-item">
+          <strong>USA</strong>
+          <span>Foco en universidades y rugby universitario estadounidense.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Valores</div>
+        <h2>La forma de trabajar importa</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Claridad</h3>
+          <p>Explicar costos, tiempos, posibilidades y límites desde el principio.</p>
+        </div>
+        <div class="value-card">
+          <h3>Compromiso</h3>
+          <p>Estar presentes durante el proceso, no solo al momento de venderlo.</p>
+        </div>
+        <div class="value-card">
+          <h3>Realismo</h3>
+          <p>Buscar oportunidades alcanzables según perfil deportivo, académico e inglés.</p>
+        </div>
+        <div class="value-card">
+          <h3>Familia</h3>
+          <p>Acompañar al jugador y a quienes toman decisiones con él.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonios">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Testimonios</div>
+        <h2>Historias que van a sostener la confianza</h2>
+        <p>Este espacio queda preparado para sumar familias, jugadores y entrenadores cuando VANTAGE tenga sus primeros casos publicados.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>“El mayor valor fue entender cada paso antes de tomar una decisión grande como familia.”</p>
+          <div class="person">Familia VANTAGE · Próximamente</div>
+        </div>
+        <div class="testimonial-card">
+          <p>“La evaluación deportiva y académica nos ayudó a ordenar objetivos reales.”</p>
+          <div class="person">Jugador VANTAGE · Próximamente</div>
+        </div>
+        <div class="testimonial-card">
+          <p>“Tener entrenadores dentro del sistema cambia la calidad de la orientación.”</p>
+          <div class="person">Entrenador · Próximamente</div>
+        </div>
+      </div>
+      <p class="placeholder-note">Textos temporales: reemplazar por testimonios reales antes de una campaña paga.</p>
+    </div>
+  </section>
+
+  <section class="values" id="faq">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">FAQ</div>
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h3>¿La primera reunión tiene costo?</h3>
+          <p>No. La primera charla sirve para evaluar el caso y decidir si tiene sentido avanzar.</p>
+        </div>
+        <div class="faq-card">
+          <h3>¿Solo trabajan con rugby?</h3>
+          <p>Por ahora el foco principal es rugby. Más adelante se pueden sumar otras becas o deportes.</p>
+        </div>
+        <div class="faq-card">
+          <h3>¿Garantizan una beca?</h3>
+          <p>No se promete una beca. Se trabaja el perfil y la búsqueda con expectativas claras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="wrap contact-box">
+      <div>
+        <div class="eyebrow">Contacto</div>
+        <h2>Empecemos por una charla</h2>
+        <p>La primera reunión es gratuita y sin compromiso. Contanos edad, club, posición, año escolar e idea de destino.</p>
+        <div class="hero-ctas">
+          <a href="#" class="btn btn-primary">Escribinos por WhatsApp</a>
+          <a href="mailto:hola@vantage.com" class="btn btn-secondary">Enviar email</a>
+        </div>
+      </div>
+      <form class="mini-form">
+        <input type="text" name="nombre" placeholder="Nombre y apellido">
+        <input type="email" name="email" placeholder="Email">
+        <input type="text" name="deporte" placeholder="Club / deporte / posición">
+        <select name="etapa">
+          <option>Estoy averiguando</option>
+          <option>Quiero evaluar mi perfil</option>
+          <option>Ya tengo video deportivo</option>
+        </select>
+        <button class="btn btn-primary" type="button">Quiero que me contacten</button>
+      </form>
+    </div>
+  </section>
+</main>
 
 <footer>
   <div class="wrap">
     <div class="foot-row">
-      <div class="monogram">AGVN</div>
+      <div class="monogram">V</div>
       <div class="foot-links">
         <a href="#">Instagram</a>
         <a href="#">YouTube</a>
         <a href="mailto:hola@vantage.com">hola@vantage.com</a>
       </div>
     </div>
-    <div class="foot-copy">© 2026 Vantage. Todos los derechos reservados.</div>
+    <div class="foot-copy">© 2026 VANTAGE. Todos los derechos reservados.</div>
   </div>
 </footer>
 
