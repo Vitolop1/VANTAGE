@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VANTAGE - Becas en Estados Unidos</title>
+<title>Campus USA - Becas en Estados Unidos</title>
 <meta name="description" content="Asesoramiento para estudiantes y deportistas que buscan oportunidades universitarias, deportivas y culturales en Estados Unidos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,17 +28,17 @@
   input,select,textarea,button{font:inherit}
   .wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
   .brand{font-size:24px;font-weight:600;letter-spacing:.01em}
-  .brand span{color:var(--blue)}
+  .brand span{color:var(--green)}
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border-radius:8px;border:1px solid transparent;font-size:14px;font-weight:800;cursor:pointer}
   .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 22px rgba(37,211,102,.22)}
   .btn-dark{background:var(--navy);color:#fff}
   .btn-light{background:#fff;border-color:var(--line);color:var(--ink)}
   .eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
 
-  header{position:sticky;top:0;z-index:10;background:rgba(251,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:10;background:var(--blue);color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
   nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-  .nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700;color:var(--muted)}
-  .nav-links a:hover{color:var(--blue)}
+  .nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700;color:rgba(255,255,255,.78)}
+  .nav-links a:hover{color:#fff}
 
   .hero{padding:76px 0 54px;background:linear-gradient(90deg,rgba(251,250,247,.96),rgba(251,250,247,.86)),url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=78") center/cover}
   .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:44px;align-items:center}
@@ -114,7 +114,7 @@
 <header>
   <div class="wrap">
     <nav>
-      <a class="brand" href="#"><span>V</span>ANTAGE</a>
+      <a class="brand" href="#"><span>Campus</span> USA</a>
       <div class="nav-links">
         <a href="#becas">Becas</a>
         <a href="#proceso">Proceso</a>
@@ -232,7 +232,7 @@
         <article class="step">
           <b>USA</b>
           <h3>Red de entrenadores y familias</h3>
-          <p>Espacio preparado para sumar recomendaciones, testimonios y casos reales a medida que avanza VANTAGE.</p>
+          <p>Espacio preparado para sumar recomendaciones, testimonios y casos reales a medida que avanza Campus USA.</p>
         </article>
       </div>
     </div>
@@ -373,7 +373,7 @@
 
 <footer>
   <div class="wrap foot">
-    <div class="brand"><span>V</span>ANTAGE</div>
+    <div class="brand"><span>Campus</span> USA</div>
     <div class="foot-links">
       <a href="mailto:hola@vantage.com">hola@vantage.com</a>
       <a href="#">Instagram</a>
@@ -430,7 +430,7 @@
 
   function buildMessage(data, status){
     return [
-      "Hola VANTAGE, quiero coordinar una evaluacion inicial.",
+      "Hola Campus USA, quiero coordinar una evaluacion inicial.",
       "",
       `Estudiante: ${valueOrEmpty(data.name)}`,
       `WhatsApp: ${valueOrEmpty(data.phone)}`,
@@ -470,7 +470,7 @@
       <p>Ya esta armado el mensaje con los datos principales para enviar por WhatsApp.</p>
       <div class="actions">
         <a class="btn btn-primary" href="${whatsapp}" target="_blank" rel="noopener">Enviar por WhatsApp</a>
-        <a class="btn btn-light" href="mailto:hola@vantage.com?subject=Evaluacion inicial VANTAGE&body=${encoded}">Enviar por email</a>
+        <a class="btn btn-light" href="mailto:hola@vantage.com?subject=Evaluacion inicial Campus USA&body=${encoded}">Enviar por email</a>
       </div>
     `;
   });
