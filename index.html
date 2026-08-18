@@ -46,10 +46,10 @@
   .btn-light{background:#fff;border-color:var(--line);color:var(--ink)}
   .eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
 
-  .top-strip{background:var(--red);color:#fff;font-size:15px;font-weight:800}
+  .top-strip{position:sticky;top:0;z-index:30;background:#05070a;color:#fff;font-size:15px;font-weight:800}
   .top-strip .wrap{min-height:34px;display:flex;align-items:center;justify-content:flex-end;gap:24px}
   .top-strip a{display:inline-flex;align-items:center;gap:7px}
-  header{position:sticky;top:0;z-index:10;background:var(--blue);color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
+  header{position:sticky;top:34px;z-index:25;background:var(--blue);color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
   header .brand,header .brand span{color:#fff}
   header .brand .usa{background:#fff;color:var(--red);padding:2px 7px;border-radius:4px}
   nav{height:116px;display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -135,6 +135,7 @@
     section{padding:48px 0}
     .grid,.choices{grid-template-columns:1fr}
     .top-strip .wrap{justify-content:center;gap:12px;flex-wrap:wrap;padding:7px 0;font-size:13px}
+    header{top:48px}
     .floating-whatsapp{right:16px;bottom:16px;width:56px;height:56px}
   }
 </style>
