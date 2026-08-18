@@ -14,9 +14,11 @@
     --muted:#65717d;
     --navy:#10202e;
     --blue:#1d4e89;
+    --red:#bf1e2e;
     --paper:#fbfaf7;
     --line:#dedbd2;
     --gold:#c9972e;
+    --green:#25d366;
     --sky:#eef5fb;
   }
   *{box-sizing:border-box}
@@ -27,17 +29,20 @@
   a{color:inherit;text-decoration:none}
   input,select,textarea,button{font:inherit}
   .wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
-  .brand{font-size:24px;font-weight:600;letter-spacing:.01em}
-  .brand span{color:#fff}
+  .brand{font-size:32px;font-weight:600;letter-spacing:.01em;color:var(--navy);white-space:nowrap}
+  .brand span{color:var(--blue)}
+  .brand .usa{color:var(--red);font-family:Inter,system-ui,sans-serif;font-weight:900;letter-spacing:.04em}
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border-radius:8px;border:1px solid transparent;font-size:14px;font-weight:800;cursor:pointer}
-  .btn-primary{background:var(--gold);color:#10202e;box-shadow:0 10px 22px rgba(201,151,46,.22)}
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 22px rgba(37,211,102,.22)}
   .btn-dark{background:var(--navy);color:#fff}
   .btn-light{background:#fff;border-color:var(--line);color:var(--ink)}
   .eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
 
   header{position:sticky;top:0;z-index:10;background:var(--blue);color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
-  nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-  .nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700;color:rgba(255,255,255,.78)}
+  header .brand,header .brand span{color:#fff}
+  header .brand .usa{background:#fff;color:var(--red);padding:2px 7px;border-radius:4px}
+  nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .nav-links{display:flex;align-items:center;gap:26px;font-size:16px;font-weight:800;color:rgba(255,255,255,.88)}
   .nav-links a:hover{color:#fff}
 
   .hero{padding:76px 0 54px;background:linear-gradient(90deg,rgba(251,250,247,.96),rgba(251,250,247,.86)),url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=78") center/cover}
@@ -103,7 +108,8 @@
   }
   @media (max-width:620px){
     .wrap{width:min(100% - 28px,1120px)}
-    nav{height:64px}
+    nav{height:72px}
+    .brand{font-size:26px}
     .hero{padding:54px 0 42px}
     section{padding:48px 0}
     .grid,.choices{grid-template-columns:1fr}
@@ -114,7 +120,7 @@
 <header>
   <div class="wrap">
     <nav>
-      <a class="brand" href="#"><span>Campus</span> USA</a>
+      <a class="brand" href="#"><span>Campus</span> <span class="usa">USA</span></a>
       <div class="nav-links">
         <a href="#becas">Becas</a>
         <a href="#proceso">Proceso</a>
@@ -373,7 +379,7 @@
 
 <footer>
   <div class="wrap foot">
-    <div class="brand"><span>Campus</span> USA</div>
+    <div class="brand"><span>Campus</span> <span class="usa">USA</span></div>
     <div class="foot-links">
       <a href="mailto:hola@vantage.com">hola@vantage.com</a>
       <a href="#">Instagram</a>
