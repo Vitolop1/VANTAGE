@@ -32,9 +32,13 @@
   .brand{font-size:32px;font-weight:600;letter-spacing:.01em;color:var(--navy);white-space:nowrap}
   .brand span{color:var(--blue)}
   .brand .usa{color:var(--red);font-family:Inter,system-ui,sans-serif;font-weight:900;letter-spacing:.04em}
-  .logo-mark{display:inline-flex;align-items:center;flex:0 0 auto}
-  .logo-mark img{display:block;height:72px;width:auto}
-  footer .logo-mark img{height:58px}
+  .logo-mark{display:inline-flex;align-items:center;gap:12px;flex:0 0 auto}
+  .logo-mark img{display:block;height:96px;width:auto}
+  .logo-text{display:inline-flex;align-items:baseline;gap:7px;font-family:Inter,system-ui,sans-serif;font-size:28px;font-weight:900;letter-spacing:.01em;color:#fff;text-transform:uppercase}
+  .logo-text .usa-word{background:#fff;color:var(--red);padding:2px 7px;border-radius:4px;letter-spacing:.04em}
+  footer .logo-mark img{height:70px}
+  footer .logo-text{color:var(--navy);font-size:24px}
+  footer .logo-text .usa-word{background:var(--blue);color:#fff}
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border-radius:8px;border:1px solid transparent;font-size:14px;font-weight:800;cursor:pointer}
   .btn svg{width:18px;height:18px;flex:0 0 auto}
   .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 22px rgba(37,211,102,.22)}
@@ -48,7 +52,7 @@
   header{position:sticky;top:0;z-index:10;background:var(--blue);color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
   header .brand,header .brand span{color:#fff}
   header .brand .usa{background:#fff;color:var(--red);padding:2px 7px;border-radius:4px}
-  nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  nav{height:116px;display:flex;align-items:center;justify-content:space-between;gap:24px}
   .nav-links{display:flex;align-items:center;gap:26px;font-size:16px;font-weight:800;color:rgba(255,255,255,.88)}
   .nav-links a:hover{color:#fff}
 
@@ -120,10 +124,13 @@
   }
   @media (max-width:620px){
     .wrap{width:min(100% - 28px,1120px)}
-    nav{height:72px}
+    nav{height:86px}
     .brand{font-size:26px}
-    .logo-mark img{height:58px}
-    footer .logo-mark img{height:50px}
+    .logo-mark{gap:8px}
+    .logo-mark img{height:72px}
+    .logo-text{font-size:19px}
+    footer .logo-mark img{height:54px}
+    footer .logo-text{font-size:18px}
     .hero{padding:54px 0 42px}
     section{padding:48px 0}
     .grid,.choices{grid-template-columns:1fr}
@@ -145,6 +152,7 @@
     <nav>
       <a class="logo-mark" href="#" aria-label="Campus USA">
         <img src="assets/campus-usa-logo.png" alt="Campus USA">
+        <span class="logo-text"><span>Campus</span> <span class="usa-word">USA</span></span>
       </a>
       <div class="nav-links">
         <a href="#becas">Becas</a>
@@ -459,6 +467,7 @@
   <div class="wrap foot">
     <div class="logo-mark">
       <img src="assets/campus-usa-logo.png" alt="Campus USA">
+      <span class="logo-text"><span>Campus</span> <span class="usa-word">USA</span></span>
     </div>
     <div class="foot-links">
       <a href="tel:+17046762602">+1 704 676 2602</a>
