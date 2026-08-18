@@ -3,163 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VANTAGE — Tu ventaja para estudiar y jugar en Estados Unidos</title>
+<title>VANTAGE - Estudiar y jugar rugby universitario en Estados Unidos</title>
+<meta name="description" content="Asesoramiento para jugadores argentinos que quieren estudiar y competir en universidades de Estados Unidos. Evaluacion inicial, postulaciones, becas y seguimiento.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#10202E;
-    --blue:#1D4E89;
-    --blue-tint:#EAF1F9;
-    --gold:#C9972E;
-    --paper:#FBFAF7;
-    --white:#FFFFFF;
-    --line:#E1DFD7;
-    --text:#1B2530;
-    --text-soft:#5C6570;
-    --green:#25D366;
+    --ink:#17212b;
+    --muted:#66717d;
+    --navy:#10202e;
+    --blue:#1d4e89;
+    --sky:#eaf2fb;
+    --green:#25d366;
+    --gold:#c9972e;
+    --clay:#b85c38;
+    --paper:#fbfaf7;
+    --white:#ffffff;
+    --line:#dedbd2;
+    --ok:#197b50;
+    --warn:#a66b00;
+    --danger:#a43d31;
+    --shadow:0 18px 45px rgba(16,32,46,.10);
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:'Inter', sans-serif; color:var(--text); background:var(--paper); line-height:1.6;}
-  h1,h2,h3,.wordmark{font-family:'Fraunces', serif;}
-  a{color:inherit; text-decoration:none;}
-  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
-  section{padding:92px 0;}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+  h1,h2,h3,.wordmark{font-family:Fraunces,Georgia,serif}
+  h1,h2,h3,p{margin:0}
+  a{color:inherit;text-decoration:none}
+  button,input,select,textarea{font:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}
+  .wordmark{font-weight:600;letter-spacing:.01em}
+  .wordmark span{color:var(--blue)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 18px;border:1px solid transparent;border-radius:8px;font-weight:800;font-size:14px;cursor:pointer;transition:.18s ease}
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 20px rgba(37,211,102,.22)}
+  .btn-primary:hover{filter:brightness(.96);transform:translateY(-1px)}
+  .btn-dark{background:var(--navy);color:#fff}
+  .btn-light{background:#fff;border-color:var(--line);color:var(--navy)}
+  .btn-light:hover{border-color:var(--blue);color:var(--blue)}
+  .btn-ghost{background:transparent;border-color:rgba(255,255,255,.28);color:#fff}
+  .field{display:grid;gap:7px}
+  .field label{font-size:13px;font-weight:800;color:var(--ink)}
+  .field small{font-size:12px;color:var(--muted)}
+  input,select,textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);padding:12px 13px;outline:none}
+  textarea{min-height:98px;resize:vertical}
+  input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,78,137,.12)}
+  section{padding:82px 0}
 
-  .wordmark{font-weight:600; letter-spacing:0.01em;}
-  .wordmark .hi,.wordmark .grp{color:var(--blue);}
-  .wordmark .grp{border-bottom:2px solid var(--blue); padding-bottom:2px;}
+  .topbar{background:var(--navy);color:#d8e2ed;font-size:13px}
+  .topbar .wrap{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .topbar strong{color:#fff}
+  .topbar-links{display:flex;gap:18px;flex-wrap:wrap}
+  header{position:sticky;top:0;z-index:30;background:rgba(251,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .nav-logo{font-size:23px;white-space:nowrap}
+  .nav-links{display:flex;gap:22px;font-size:14px;font-weight:800;color:var(--muted)}
+  .nav-links a:hover{color:var(--blue)}
 
-  .topbar{background:var(--navy); color:#D9E2EC; font-size:13px;}
-  .topbar .wrap{min-height:38px; display:flex; align-items:center; justify-content:space-between; gap:18px;}
-  .topbar-links{display:flex; gap:18px; flex-wrap:wrap;}
-  .topbar strong{color:#fff; font-weight:600;}
+  .hero{position:relative;overflow:hidden;padding:78px 0 34px;background:#eef4f8}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,250,247,.96) 0%,rgba(251,250,247,.88) 45%,rgba(251,250,247,.30) 100%),url("https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=1800&q=78") center/cover;z-index:0}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr);gap:42px;align-items:start}
+  .hero h1{font-size:clamp(44px,7vw,88px);line-height:.98;max-width:780px;margin-top:12px}
+  .hero .tag{max-width:620px;margin-top:22px;font-size:19px;color:#4c5865}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .hero-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;max-width:720px}
+  .hero-point{background:rgba(255,255,255,.78);border:1px solid rgba(222,219,210,.85);border-radius:8px;padding:14px}
+  .hero-point b{display:block;font-size:14px}
+  .hero-point span{display:block;margin-top:4px;font-size:12.5px;color:var(--muted)}
+  .quick-card{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);padding:22px}
+  .quick-card h2{font-size:25px;line-height:1.15;margin-top:8px}
+  .quick-card p{color:var(--muted);font-size:14px;margin-top:9px}
+  .quick-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .quick-fields .wide{grid-column:1/-1}
+  .result-box{display:none;margin-top:16px;border-radius:8px;border:1px solid var(--line);background:var(--sky);padding:14px}
+  .result-box strong{display:block;color:var(--blue);font-size:15px}
+  .result-box span{display:block;margin-top:4px;color:var(--muted);font-size:13px}
 
-  header{position:sticky; top:0; z-index:50; background:rgba(251,250,247,0.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
-  nav{display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 28px; max-width:1120px; margin:0 auto;}
-  .nav-logo{font-size:22px; white-space:nowrap;}
-  .nav-links{display:flex; gap:24px; font-size:14px; font-weight:600; color:var(--text-soft);}
-  .nav-links a:hover{color:var(--blue);}
-  .nav-cta,.btn-primary{background:var(--green); color:#fff; box-shadow:0 10px 22px rgba(37,211,102,0.2);}
-  .nav-cta{padding:10px 18px; border-radius:8px; font-size:14px; font-weight:700; white-space:nowrap;}
-  @media (max-width:860px){
-    .topbar .wrap{align-items:flex-start; flex-direction:column; padding-top:10px; padding-bottom:10px;}
-    .nav-links{display:none;}
+  .bar{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+  .bar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .bar-item{background:#fff;padding:22px}
+  .bar-item strong{display:block;font-family:Fraunces,Georgia,serif;font-size:30px;color:var(--blue)}
+  .bar-item span{font-size:13px;color:var(--muted)}
+
+  .section-head{display:grid;grid-template-columns:minmax(0,.85fr) minmax(260px,.45fr);gap:24px;align-items:end;margin-bottom:34px}
+  .section-head h2{font-size:clamp(30px,4vw,44px);line-height:1.1;margin-top:10px}
+  .section-head p{color:var(--muted)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px}
+  .card h3{font-size:20px;line-height:1.2}
+  .card p{margin-top:10px;color:var(--muted);font-size:14px}
+  .card .num{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:8px;background:var(--sky);color:var(--blue);font-weight:800;margin-bottom:16px}
+  .card.accent{border-color:rgba(29,78,137,.36);background:linear-gradient(180deg,#fff,#f4f8fc)}
+
+  .process{background:var(--navy);color:#fff}
+  .process .eyebrow{color:var(--gold)}
+  .process .section-head p{color:#b7c2ce}
+  .timeline{border-top:1px solid rgba(255,255,255,.13)}
+  .step{display:grid;grid-template-columns:58px 1fr 190px;gap:18px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.13)}
+  .step .n{font-family:Fraunces,Georgia,serif;font-size:28px;color:var(--gold)}
+  .step h3{font-family:Inter,system-ui,sans-serif;font-size:17px}
+  .step p{color:#b7c2ce;font-size:14px;margin-top:4px;max-width:650px}
+  .step .meta{align-self:center;color:#fff;font-size:13px;font-weight:800;text-align:right}
+
+  .split{display:grid;grid-template-columns:minmax(0,.78fr) minmax(330px,.62fr);gap:28px;align-items:start}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px}
+  .panel h3{font-size:24px;line-height:1.2}
+  .checklist{display:grid;gap:12px;margin-top:18px}
+  .check{display:flex;gap:10px;color:var(--muted);font-size:14px}
+  .check::before{content:"";width:10px;height:10px;margin-top:7px;border-radius:50%;background:var(--gold);flex:0 0 auto}
+  .audience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+  .audience{border:1px solid var(--line);border-radius:8px;padding:16px;background:#fff}
+  .audience b{display:block}
+  .audience span{display:block;margin-top:5px;color:var(--muted);font-size:13px}
+
+  .form-section{background:#fff}
+  .form-shell{display:grid;grid-template-columns:minmax(300px,.5fr) minmax(0,1fr);gap:28px;align-items:start}
+  .form-aside{position:sticky;top:88px;background:var(--navy);color:#fff;border-radius:8px;padding:24px}
+  .form-aside h2{font-size:32px;line-height:1.08;margin-top:10px}
+  .form-aside p{color:#c3ced9;margin-top:12px}
+  .progress{height:8px;background:rgba(255,255,255,.14);border-radius:999px;overflow:hidden;margin-top:22px}
+  .progress span{display:block;height:100%;width:0;background:var(--green);transition:.2s ease}
+  .progress-text{font-size:12px;color:#c3ced9;margin-top:8px}
+  .lead-form{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:22px}
+  .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .form-grid .full{grid-column:1/-1}
+  .choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .choice{position:relative}
+  .choice input{position:absolute;opacity:0;pointer-events:none}
+  .choice span{display:block;min-height:50px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;text-align:center;font-size:13px;font-weight:800;cursor:pointer}
+  .choice input:checked + span{border-color:var(--blue);background:var(--sky);color:var(--blue)}
+  .form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+  .lead-summary{display:none;margin-top:18px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:18px}
+  .lead-summary h3{font-family:Inter,system-ui,sans-serif;font-size:17px}
+  .summary-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+  .summary-item{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px}
+  .summary-item b{display:block;font-size:12px;color:var(--muted)}
+  .summary-item span{display:block;margin-top:3px;font-weight:800}
+  .status-pill{display:inline-flex;margin-top:12px;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800;background:#edf7f2;color:var(--ok)}
+
+  .content-lab{background:#f3f0e8}
+  .content-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .content-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;min-height:165px}
+  .content-card b{display:block}
+  .content-card span{display:block;color:var(--muted);font-size:13px;margin-top:8px}
+  .content-card em{display:block;font-style:normal;color:var(--clay);font-size:12px;font-weight:800;margin-top:16px}
+
+  .faq{background:#fff}
+  details{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px}
+  details + details{margin-top:10px}
+  summary{cursor:pointer;font-weight:800}
+  details p{color:var(--muted);font-size:14px;margin-top:10px}
+
+  .contact{background:var(--navy);color:#fff}
+  .contact-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+  .contact h2{font-size:clamp(30px,4vw,44px);line-height:1.1}
+  .contact p{margin-top:12px;color:#c3ced9;max-width:680px}
+  footer{padding:36px 0;border-top:1px solid var(--line)}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap}
+
+  @media (max-width:920px){
+    .nav-links{display:none}
+    .hero-grid,.section-head,.split,.form-shell,.contact-grid{grid-template-columns:1fr}
+    .quick-fields,.form-grid,.summary-list,.audience-grid{grid-template-columns:1fr}
+    .form-aside{position:static}
+    .cards,.content-grid{grid-template-columns:repeat(2,1fr)}
+    .step{grid-template-columns:42px 1fr}
+    .step .meta{text-align:left;grid-column:2}
   }
-
-  .hero{padding:92px 0 76px; background:linear-gradient(120deg, rgba(234,241,249,0.95), rgba(251,250,247,0.82)), radial-gradient(circle at 82% 28%, rgba(201,151,46,0.16), transparent 30%);}
-  .hero-grid{display:grid; grid-template-columns:minmax(0, 1.08fr) minmax(320px, 0.92fr); gap:48px; align-items:center;}
-  .eyebrow{font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue); font-weight:700; margin-bottom:18px;}
-  .hero .wordmark{font-size:clamp(58px, 10vw, 112px); line-height:0.94;}
-  .hero p.tag{max-width:640px; margin-top:26px; font-size:20px; color:var(--text-soft);}
-  .hero-ctas{margin-top:36px; display:flex; gap:14px; flex-wrap:wrap;}
-  .btn{display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:13px 24px; border-radius:8px; font-weight:700; font-size:15px;}
-  .btn-secondary{background:#fff; color:var(--navy); border:1px solid var(--line);}
-  .btn-secondary:hover{border-color:var(--blue); color:var(--blue);}
-  .hero-card{background:var(--white); border:1px solid var(--line); border-radius:8px; padding:28px; box-shadow:0 18px 50px rgba(16,32,46,0.09);}
-  .hero-card h2{font-size:28px; font-weight:500; line-height:1.15;}
-  .hero-card p{color:var(--text-soft); margin-top:10px;}
-  .profile-list{display:grid; gap:12px; margin-top:24px;}
-  .profile-item{display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-top:1px solid var(--line); font-size:14px;}
-  .profile-item b{color:var(--navy);}
-  .profile-item span{color:var(--text-soft); text-align:right;}
-  @media (max-width:860px){.hero-grid{grid-template-columns:1fr;} .hero-card{padding:24px;}}
-
-  .head{max-width:690px; margin:0 auto 54px; text-align:center;}
-  .head .eyebrow{margin-bottom:12px;}
-  .head h2{font-size:clamp(30px, 4vw, 42px); line-height:1.14; font-weight:500;}
-  .head p{margin-top:14px; color:var(--text-soft); font-size:16px;}
-
-  .showcase{padding:54px 0; background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .showcase-box{display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center;}
-  .showcase h2{font-size:28px; font-weight:500;}
-  .showcase p{color:var(--text-soft); margin-top:8px; max-width:720px;}
-  @media (max-width:720px){.showcase-box{grid-template-columns:1fr;}}
-
-  .proceso{background:var(--navy); color:#fff;}
-  .proceso .head h2{color:#fff;}
-  .proceso .eyebrow{color:var(--gold);}
-  .proceso .head p{color:#AEB9C4;}
-  .steps{display:flex; flex-direction:column;}
-  .step{display:grid; grid-template-columns:64px 1fr auto; gap:20px; align-items:start; padding:26px 0; border-top:1px solid rgba(255,255,255,0.12);}
-  .step:last-child{border-bottom:1px solid rgba(255,255,255,0.12);}
-  .step .n{font-family:'Fraunces', serif; font-size:26px; color:var(--gold);}
-  .step h3{font-size:17px; font-weight:600; margin-bottom:4px;}
-  .step p{color:#AEB9C4; font-size:14.5px; max-width:560px;}
-  .step .cost{font-size:13px; color:#fff; opacity:0.75; white-space:nowrap; align-self:center;}
-  @media (max-width:600px){.step{grid-template-columns:40px 1fr;} .step .cost{grid-column:2; margin-top:6px;}}
-
-  .becas-grid,.values-grid,.testimonial-grid,.faq-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:20px;}
-  .beca-card,.value-card,.testimonial-card,.faq-card{border:1px solid var(--line); border-radius:8px; padding:28px; background:#fff;}
-  .beca-card.flag{border-color:var(--blue); background:var(--blue-tint);}
-  .tag-pill{display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--blue); background:#fff; border:1px solid var(--blue); padding:4px 10px; border-radius:999px; margin-bottom:16px;}
-  .beca-card h3,.value-card h3,.testimonial-card h3,.faq-card h3{font-size:20px; font-weight:500; margin-bottom:10px;}
-  .beca-card p,.value-card p,.testimonial-card p,.faq-card p{color:var(--text-soft); font-size:14.5px;}
-  .beca-card.soon{opacity:0.74;}
-  .beca-card.soon .tag-pill{color:var(--text-soft); border-color:var(--line);}
-
-  .nosotros{background:#fff;}
-  .team-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
-  .team-card{padding:28px; border:1px solid var(--line); border-radius:8px; background:var(--paper);}
-  .team-card .role{font-size:12px; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px;}
-  .team-card h3{font-size:19px; font-weight:500; margin-bottom:10px;}
-  .team-card p{font-size:14.5px; color:var(--text-soft);}
-
-  .proof{background:var(--blue-tint);}
-  .proof-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
-  .proof-item{background:#fff; padding:34px 28px; text-align:center;}
-  .proof-item strong{display:block; font-family:'Fraunces', serif; font-size:42px; line-height:1; color:var(--blue); margin-bottom:10px;}
-  .proof-item span{color:var(--text-soft); font-size:14px;}
-  @media (max-width:720px){.proof-grid{grid-template-columns:1fr;}}
-
-  .values{background:#fff;}
-  .value-card h3{color:var(--blue);}
-  .testimonial-card{display:flex; flex-direction:column; min-height:220px;}
-  .testimonial-card p{font-size:15px;}
-  .testimonial-card .person{margin-top:auto; padding-top:22px; color:var(--navy); font-weight:700; font-size:14px;}
-  .placeholder-note{color:var(--text-soft); font-size:13px; text-align:center; margin-top:22px;}
-
-  .contacto{background:var(--navy); color:#fff;}
-  .contact-box{display:grid; grid-template-columns:1fr minmax(280px, 390px); gap:42px; align-items:start;}
-  .contacto h2{font-size:clamp(30px, 4vw, 42px); font-weight:500; line-height:1.12;}
-  .contacto p{color:#B9C5D1; margin-top:14px; max-width:560px;}
-  .mini-form{background:#fff; border-radius:8px; padding:24px; display:grid; gap:12px;}
-  .mini-form input,.mini-form select{width:100%; min-height:44px; border:1px solid var(--line); border-radius:8px; padding:0 12px; font:inherit;}
-  .mini-form .btn{border:0; cursor:pointer; width:100%;}
-  @media (max-width:820px){.contact-box{grid-template-columns:1fr;}}
-
-  footer{padding:48px 0; border-top:1px solid var(--line);}
-  .foot-row{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;}
-  .monogram{width:44px; height:44px; border-radius:50%; background:var(--blue-tint); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:var(--blue);}
-  .foot-links{display:flex; gap:20px; flex-wrap:wrap; font-size:13px; color:var(--text-soft);}
-  .foot-copy{font-size:12.5px; color:var(--text-soft); margin-top:24px; text-align:center;}
+  @media (max-width:640px){
+    .topbar .wrap{align-items:flex-start;flex-direction:column;padding-top:10px;padding-bottom:10px}
+    nav{padding:14px 18px}
+    .wrap{padding:0 18px}
+    section{padding:62px 0}
+    .hero{padding-top:58px}
+    .hero-points,.bar-grid,.cards,.content-grid,.choice-grid{grid-template-columns:1fr}
+    .quick-card,.lead-form,.panel{padding:18px}
+  }
 </style>
 </head>
 <body>
-
 <div class="topbar">
   <div class="wrap">
-    <span><strong>VANTAGE</strong> · Becas deportivas y acompañamiento universitario</span>
+    <span><strong>VANTAGE</strong> - Rugby, universidad y proceso real en Estados Unidos</span>
     <div class="topbar-links">
       <a href="mailto:hola@vantage.com">hola@vantage.com</a>
-      <a href="#contacto">Consulta gratuita</a>
+      <a href="#evaluacion">Evaluacion inicial</a>
     </div>
   </div>
 </div>
 
 <header>
   <nav>
-    <a href="#" class="nav-logo wordmark"><span class="hi">V</span>A<span class="hi">N</span>T<span class="grp">AGE</span></a>
+    <a href="#" class="nav-logo wordmark"><span>V</span>ANTAGE</a>
     <div class="nav-links">
       <a href="#proceso">Proceso</a>
-      <a href="#becas">Becas</a>
-      <a href="#testimonios">Testimonios</a>
+      <a href="#perfil">Perfil ideal</a>
+      <a href="#evaluacion">Formulario</a>
+      <a href="#contenido">Redes</a>
       <a href="#faq">FAQ</a>
-      <a href="#contacto">Contacto</a>
     </div>
-    <a href="#contacto" class="nav-cta">WhatsApp</a>
+    <a class="btn btn-primary js-whatsapp" href="#evaluacion">WhatsApp</a>
   </nav>
 </header>
 
@@ -167,267 +215,453 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">Argentina → Estados Unidos</div>
-        <h1 class="wordmark"><span class="hi">V</span>A<span class="hi">N</span>T<span class="grp">AGE</span></h1>
-        <p class="tag">Asesoramiento académico y deportivo para jugadores de rugby que quieren estudiar, competir y crecer en universidades de Estados Unidos.</p>
+        <div class="eyebrow">Argentina a Estados Unidos</div>
+        <h1>Estudiar en USA y jugar rugby universitario no empieza con promesas. Empieza con un buen diagnostico.</h1>
+        <p class="tag">VANTAGE acompaña a jugadores y familias desde la evaluacion inicial hasta las conversaciones con universidades, postulaciones, tramites y llegada al campus.</p>
         <div class="hero-ctas">
-          <a href="#contacto" class="btn btn-primary">Agendar reunión gratuita</a>
-          <a href="#proceso" class="btn btn-secondary">Ver proceso</a>
+          <a href="#evaluacion" class="btn btn-primary">Completar evaluacion</a>
+          <a href="#proceso" class="btn btn-light">Ver como funciona</a>
+        </div>
+        <div class="hero-points">
+          <div class="hero-point"><b>Para familias</b><span>Costos, tiempos y escenarios claros antes de avanzar.</span></div>
+          <div class="hero-point"><b>Para jugadores</b><span>Perfil deportivo, academico, ingles y video ordenados.</span></div>
+          <div class="hero-point"><b>Para entrenadores</b><span>Contacto serio con informacion completa y verificable.</span></div>
         </div>
       </div>
-      <aside class="hero-card">
-        <div class="eyebrow">Tu perfil</div>
-        <h2>Primero entendemos si el camino tiene sentido para vos.</h2>
-        <p>Evaluamos nivel deportivo, situación académica, inglés, objetivos familiares y presupuesto antes de avanzar.</p>
-        <div class="profile-list">
-          <div class="profile-item"><b>Deporte</b><span>Rugby universitario</span></div>
-          <div class="profile-item"><b>Destino</b><span>Estados Unidos</span></div>
-          <div class="profile-item"><b>Inicio</b><span>Reunión sin costo</span></div>
+
+      <aside class="quick-card" aria-labelledby="quick-title">
+        <div class="eyebrow">Chequeo rapido</div>
+        <h2 id="quick-title">¿En que etapa estas?</h2>
+        <p>Respondelo en 30 segundos. La pagina te devuelve el proximo paso sugerido.</p>
+        <div class="quick-fields">
+          <div class="field">
+            <label for="quickAge">Edad</label>
+            <select id="quickAge">
+              <option value="">Elegir</option>
+              <option value="early">14-15</option>
+              <option value="ideal">16-18</option>
+              <option value="late">19-21</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quickEnglish">Ingles</label>
+            <select id="quickEnglish">
+              <option value="">Elegir</option>
+              <option value="low">Basico</option>
+              <option value="mid">Intermedio</option>
+              <option value="high">Avanzado</option>
+            </select>
+          </div>
+          <div class="field wide">
+            <label for="quickStage">Objetivo</label>
+            <select id="quickStage">
+              <option value="">Elegir</option>
+              <option value="explore">Estoy averiguando</option>
+              <option value="profile">Quiero evaluar mi perfil</option>
+              <option value="apply">Quiero postular pronto</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-dark" type="button" id="quickCheck">Ver recomendacion</button>
+        <div class="result-box" id="quickResult" aria-live="polite"></div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="bar">
+    <div class="wrap">
+      <div class="bar-grid">
+        <div class="bar-item"><strong>0</strong><span>Costo de la primera reunion.</span></div>
+        <div class="bar-item"><strong>6</strong><span>Etapas desde diagnostico hasta seguimiento.</span></div>
+        <div class="bar-item"><strong>1:1</strong><span>Trabajo por perfil, no por paquete generico.</span></div>
+        <div class="bar-item"><strong>USA</strong><span>Foco en rugby universitario estadounidense.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="proceso" class="process">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Proceso de trabajo</div>
+          <h2>Un camino ordenado para que nadie avance a ciegas.</h2>
+        </div>
+        <p>Cada etapa tiene un objetivo concreto. Asi la familia sabe que se esta haciendo, que falta y que decision viene despues.</p>
+      </div>
+      <div class="timeline">
+        <div class="step"><div class="n">0</div><div><h3>Reunion informativa</h3><p>Escuchamos objetivos, explicamos el sistema universitario y vemos si el caso tiene sentido.</p></div><div class="meta">Sin costo</div></div>
+        <div class="step"><div class="n">1</div><div><h3>Diagnostico y perfil</h3><p>Ordenamos datos deportivos, academicos, ingles, video, presupuesto y preferencias de carrera/destino.</p></div><div class="meta">Inicio del proceso</div></div>
+        <div class="step"><div class="n">2</div><div><h3>Busqueda activa</h3><p>Contactamos programas, entrenadores y universidades alineadas al perfil real del jugador.</p></div><div class="meta">Gestion VANTAGE</div></div>
+        <div class="step"><div class="n">3</div><div><h3>Aplicaciones y respuestas</h3><p>Acompañamos formularios, entrevistas, emails, documentacion y seguimiento de oportunidades.</p></div><div class="meta">Seguimiento</div></div>
+        <div class="step"><div class="n">4</div><div><h3>Tramites para viajar</h3><p>Visa, WES o credit transfer, housing, becas, vacunas, pasajes, ingresos y preparacion de llegada.</p></div><div class="meta">Cierre operativo</div></div>
+        <div class="step"><div class="n">5</div><div><h3>Continuidad</h3><p>Seguimiento en destino y orientacion si aparece la necesidad de cambiar de universidad.</p></div><div class="meta">Opcional</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="perfil">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow">Perfil ideal</div>
+        <h2>La oportunidad aparece cuando deporte, estudio, idioma y familia estan alineados.</h2>
+        <div class="audience-grid">
+          <div class="audience"><b>Jugador de 15 a 19 años</b><span>El margen de preparacion cambia mucho segun edad y fecha de egreso.</span></div>
+          <div class="audience"><b>Rugby competitivo</b><span>Club, posicion, experiencia, video y referencias pesan en la conversacion.</span></div>
+          <div class="audience"><b>Academico ordenado</b><span>Notas, materias, carrera deseada e ingles definen el rango de universidades.</span></div>
+          <div class="audience"><b>Familia informada</b><span>Presupuesto, tiempos y expectativas claras evitan decisiones apuradas.</span></div>
+        </div>
+      </div>
+      <aside class="panel">
+        <h3>Que queremos aprender del formulario</h3>
+        <div class="checklist">
+          <div class="check">Si la persona esta solo averiguando, lista para una evaluacion o cerca de postular.</div>
+          <div class="check">Que tan completo esta el perfil deportivo y academico.</div>
+          <div class="check">Que objeciones aparecen: costo, ingles, edad, video, carrera o desconocimiento del sistema.</div>
+          <div class="check">Que contenido deberian publicar ustedes para responder dudas reales.</div>
         </div>
       </aside>
     </div>
   </section>
 
-  <section class="showcase" id="eventos">
-    <div class="wrap showcase-box">
-      <div>
-        <div class="eyebrow">Evaluación inicial</div>
-        <h2>Próximas reuniones y evaluaciones</h2>
-        <p>Cuando abramos fechas de scouting, charlas informativas o evaluaciones de perfil, este bloque va a funcionar como cartelera principal.</p>
-      </div>
-      <a href="#contacto" class="btn btn-secondary">Consultar disponibilidad</a>
-    </div>
-  </section>
+  <section id="evaluacion" class="form-section">
+    <div class="wrap form-shell">
+      <aside class="form-aside">
+        <div class="eyebrow">Formulario util</div>
+        <h2>Evaluacion inicial del jugador</h2>
+        <p>Este formulario no promete becas. Sirve para llegar a la primera charla con informacion concreta y entender que busca cada familia.</p>
+        <div class="progress"><span id="progressBar"></span></div>
+        <div class="progress-text" id="progressText">0% completo</div>
+      </aside>
 
-  <section class="proceso" id="proceso">
-    <div class="wrap">
-      <div class="head">
-        <div class="eyebrow">El proceso</div>
-        <h2>Seis pasos, de punta a punta</h2>
-        <p>Un recorrido ordenado para que la familia entienda qué pasa antes, durante y después de la postulación.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="n">0</div>
-          <div><h3>Reunión informativa</h3><p>Diagnóstico inicial con el jugador y su familia sobre el sistema universitario de EE.UU.</p></div>
-          <div class="cost">Sin costo</div>
+      <form class="lead-form" id="leadForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Nombre del jugador</label>
+            <input id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="familyName">Nombre del padre/madre</label>
+            <input id="familyName" name="familyName" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">WhatsApp</label>
+            <input id="phone" name="phone" autocomplete="tel" placeholder="+54 9 ...">
+          </div>
+          <div class="field">
+            <label for="age">Edad</label>
+            <select id="age" name="age" required>
+              <option value="">Elegir</option>
+              <option>14-15</option>
+              <option>16-17</option>
+              <option>18</option>
+              <option>19-21</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="graduation">Año de egreso</label>
+            <input id="graduation" name="graduation" inputmode="numeric" placeholder="Ej: 2027">
+          </div>
+          <div class="field">
+            <label for="club">Club / colegio</label>
+            <input id="club" name="club" placeholder="Ej: SIC, Newman, Tala...">
+          </div>
+          <div class="field">
+            <label for="position">Posicion</label>
+            <input id="position" name="position" placeholder="Ej: apertura, centro, tercera linea">
+          </div>
+          <div class="field">
+            <label for="english">Nivel de ingles</label>
+            <select id="english" name="english" required>
+              <option value="">Elegir</option>
+              <option>Basico</option>
+              <option>Intermedio</option>
+              <option>Avanzado</option>
+              <option>Ya rendi TOEFL / Duolingo / IELTS</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="grades">Situacion academica</label>
+            <select id="grades" name="grades">
+              <option value="">Elegir</option>
+              <option>Promedio alto</option>
+              <option>Promedio medio</option>
+              <option>Necesito ordenar materias/notas</option>
+              <option>No se todavia</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>¿Que estas buscando?</label>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="intent" value="Entender si es posible"><span>Entender si es posible</span></label>
+              <label class="choice"><input type="radio" name="intent" value="Evaluar mi perfil"><span>Evaluar mi perfil</span></label>
+              <label class="choice"><input type="radio" name="intent" value="Postular cuanto antes"><span>Postular cuanto antes</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="video">Video deportivo</label>
+            <select id="video" name="video">
+              <option value="">Elegir</option>
+              <option>Tengo video armado</option>
+              <option>Tengo material pero no editado</option>
+              <option>No tengo video</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="budget">Presupuesto familiar estimado</label>
+            <select id="budget" name="budget">
+              <option value="">Elegir</option>
+              <option>Necesito beca alta</option>
+              <option>Podemos cubrir parte del costo</option>
+              <option>Tenemos flexibilidad</option>
+              <option>Prefiero hablarlo en reunion</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="notes">Contanos lo mas importante</label>
+            <textarea id="notes" name="notes" placeholder="Objetivos, dudas, carrera que te interesa, fechas, lesiones, torneos, contactos previos..."></textarea>
+          </div>
         </div>
-        <div class="step">
-          <div class="n">1</div>
-          <div><h3>Perfil y postulación</h3><p>Armado de perfil deportivo y académico, video, datos clave y universidades objetivo.</p></div>
-          <div class="cost">Inicio</div>
+        <div class="form-actions">
+          <button class="btn btn-dark" type="submit">Generar resumen</button>
+          <button class="btn btn-light" type="button" id="saveDraft">Guardar borrador</button>
+          <button class="btn btn-light" type="reset">Limpiar</button>
         </div>
-        <div class="step">
-          <div class="n">2</div>
-          <div><h3>Gestión con universidades</h3><p>Contacto con entrenadores, admisiones y programas alineados al perfil del jugador.</p></div>
-          <div class="cost">Incluido</div>
-        </div>
-        <div class="step">
-          <div class="n">3</div>
-          <div><h3>Acompañamiento y respuestas</h3><p>Seguimiento de conversaciones, próximos pasos, documentación y expectativas reales.</p></div>
-          <div class="cost">Seguimiento</div>
-        </div>
-        <div class="step">
-          <div class="n">4</div>
-          <div><h3>Trámites y aceptación</h3><p>Apoyo en visa, becas, housing, pasajes, ingresos, vacunas y preparación para viajar.</p></div>
-          <div class="cost">Cierre</div>
-        </div>
-        <div class="step">
-          <div class="n">5</div>
-          <div><h3>Continuidad en destino</h3><p>Acompañamiento durante la estadía y orientación ante cambios académicos o deportivos.</p></div>
-          <div class="cost">Opcional</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="becas">
-    <div class="wrap">
-      <div class="head">
-        <div class="eyebrow">Becas</div>
-        <h2>Empezamos por rugby, con espacio para crecer</h2>
-        <p>La propuesta inicial está enfocada en rugby, pero la estructura permite sumar otros caminos cuando VANTAGE esté listo para ofrecerlos.</p>
-      </div>
-      <div class="becas-grid">
-        <div class="beca-card flag">
-          <span class="tag-pill">Disponible</span>
-          <h3>Rugby</h3>
-          <p>Scouting, armado de perfil y contacto directo con entrenadores universitarios en Estados Unidos.</p>
-        </div>
-        <div class="beca-card soon">
-          <span class="tag-pill">Próximamente</span>
-          <h3>Académicas</h3>
-          <p>Opciones para estudiantes con buen rendimiento académico y objetivos universitarios claros.</p>
-        </div>
-        <div class="beca-card soon">
-          <span class="tag-pill">Próximamente</span>
-          <h3>Culturales</h3>
-          <p>Programas de intercambio, diversidad cultural y experiencias formativas internacionales.</p>
-        </div>
-        <div class="beca-card soon">
-          <span class="tag-pill">Próximamente</span>
-          <h3>Otros deportes</h3>
-          <p>Una futura línea para ampliar la red deportiva sin perder foco ni calidad de seguimiento.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="nosotros" id="nosotros">
-    <div class="wrap">
-      <div class="head">
-        <div class="eyebrow">Nosotros</div>
-        <h2>Adentro del sistema, no afuera</h2>
-        <p>Dos referentes con experiencia real en rugby universitario de Estados Unidos acompañan la evaluación deportiva y el contacto con programas.</p>
-      </div>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="role">Rugby universitario</div>
-          <h3>Agustín</h3>
-          <p>Ex jugador de rugby y entrenador universitario en EE.UU. Acompaña la lectura deportiva del perfil y las conversaciones con familias.</p>
-        </div>
-        <div class="team-card">
-          <div class="role">Rugby universitario</div>
-          <h3>Genaro Fesia</h3>
-          <p>Entrenador universitario. Trabaja el contacto con programas, análisis deportivo y lectura realista de oportunidades.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="proof">
-    <div class="wrap">
-      <div class="proof-grid">
-        <div class="proof-item">
-          <strong>1:1</strong>
-          <span>Acompañamiento personalizado para cada familia.</span>
-        </div>
-        <div class="proof-item">
-          <strong>6</strong>
-          <span>Etapas claras desde el diagnóstico hasta la llegada.</span>
-        </div>
-        <div class="proof-item">
-          <strong>USA</strong>
-          <span>Foco en universidades y rugby universitario estadounidense.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="values">
-    <div class="wrap">
-      <div class="head">
-        <div class="eyebrow">Valores</div>
-        <h2>La forma de trabajar importa</h2>
-      </div>
-      <div class="values-grid">
-        <div class="value-card">
-          <h3>Claridad</h3>
-          <p>Explicar costos, tiempos, posibilidades y límites desde el principio.</p>
-        </div>
-        <div class="value-card">
-          <h3>Compromiso</h3>
-          <p>Estar presentes durante el proceso, no solo al momento de venderlo.</p>
-        </div>
-        <div class="value-card">
-          <h3>Realismo</h3>
-          <p>Buscar oportunidades alcanzables según perfil deportivo, académico e inglés.</p>
-        </div>
-        <div class="value-card">
-          <h3>Familia</h3>
-          <p>Acompañar al jugador y a quienes toman decisiones con él.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonios">
-    <div class="wrap">
-      <div class="head">
-        <div class="eyebrow">Testimonios</div>
-        <h2>Historias que van a sostener la confianza</h2>
-        <p>Este espacio queda preparado para sumar familias, jugadores y entrenadores cuando VANTAGE tenga sus primeros casos publicados.</p>
-      </div>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <p>“El mayor valor fue entender cada paso antes de tomar una decisión grande como familia.”</p>
-          <div class="person">Familia VANTAGE · Próximamente</div>
-        </div>
-        <div class="testimonial-card">
-          <p>“La evaluación deportiva y académica nos ayudó a ordenar objetivos reales.”</p>
-          <div class="person">Jugador VANTAGE · Próximamente</div>
-        </div>
-        <div class="testimonial-card">
-          <p>“Tener entrenadores dentro del sistema cambia la calidad de la orientación.”</p>
-          <div class="person">Entrenador · Próximamente</div>
-        </div>
-      </div>
-      <p class="placeholder-note">Textos temporales: reemplazar por testimonios reales antes de una campaña paga.</p>
-    </div>
-  </section>
-
-  <section class="values" id="faq">
-    <div class="wrap">
-      <div class="head">
-        <div class="eyebrow">FAQ</div>
-        <h2>Preguntas frecuentes</h2>
-      </div>
-      <div class="faq-grid">
-        <div class="faq-card">
-          <h3>¿La primera reunión tiene costo?</h3>
-          <p>No. La primera charla sirve para evaluar el caso y decidir si tiene sentido avanzar.</p>
-        </div>
-        <div class="faq-card">
-          <h3>¿Solo trabajan con rugby?</h3>
-          <p>Por ahora el foco principal es rugby. Más adelante se pueden sumar otras becas o deportes.</p>
-        </div>
-        <div class="faq-card">
-          <h3>¿Garantizan una beca?</h3>
-          <p>No se promete una beca. Se trabaja el perfil y la búsqueda con expectativas claras.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contacto" id="contacto">
-    <div class="wrap contact-box">
-      <div>
-        <div class="eyebrow">Contacto</div>
-        <h2>Empecemos por una charla</h2>
-        <p>La primera reunión es gratuita y sin compromiso. Contanos edad, club, posición, año escolar e idea de destino.</p>
-        <div class="hero-ctas">
-          <a href="#" class="btn btn-primary">Escribinos por WhatsApp</a>
-          <a href="mailto:hola@vantage.com" class="btn btn-secondary">Enviar email</a>
-        </div>
-      </div>
-      <form class="mini-form">
-        <input type="text" name="nombre" placeholder="Nombre y apellido">
-        <input type="email" name="email" placeholder="Email">
-        <input type="text" name="deporte" placeholder="Club / deporte / posición">
-        <select name="etapa">
-          <option>Estoy averiguando</option>
-          <option>Quiero evaluar mi perfil</option>
-          <option>Ya tengo video deportivo</option>
-        </select>
-        <button class="btn btn-primary" type="button">Quiero que me contacten</button>
+        <div class="lead-summary" id="leadSummary" aria-live="polite"></div>
       </form>
+    </div>
+  </section>
+
+  <section id="contenido" class="content-lab">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Redes y contenido</div>
+          <h2>La web tambien tiene que decirles que publicar.</h2>
+        </div>
+        <p>Los formularios van a mostrar patrones: dudas repetidas, edades, nivel de ingles, miedos de costo y etapa del proceso.</p>
+      </div>
+      <div class="content-grid">
+        <div class="content-card"><b>Reels educativos</b><span>Explicar becas, divisiones, admisiones, visas y tiempos con lenguaje simple.</span><em>Instagram / TikTok</em></div>
+        <div class="content-card"><b>Casos y entrevistas</b><span>Jugadores, familias y entrenadores contando procesos reales cuando existan.</span><em>YouTube / Shorts</em></div>
+        <div class="content-card"><b>Checklist descargable</b><span>Material para que una familia sepa que documentos y datos tiene que preparar.</span><em>Lead magnet</em></div>
+        <div class="content-card"><b>Charlas con clubes</b><span>Fechas, cupos y formulario para evaluar interesados antes de cada reunion.</span><em>Eventos</em></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow">Preguntas frecuentes</div>
+        <h2>Dudas que conviene responder antes de vender.</h2>
+      </div>
+      <div>
+        <details open><summary>¿La primera reunion tiene costo?</summary><p>No. La primera reunion sirve para entender el caso y explicar como funciona el sistema. Si el perfil tiene sentido, se propone avanzar con una evaluacion y busqueda mas profunda.</p></details>
+        <details><summary>¿Garantizan una beca?</summary><p>No. VANTAGE puede trabajar el perfil, abrir conversaciones y acompañar postulaciones, pero ninguna agencia seria deberia garantizar una beca o aceptacion.</p></details>
+        <details><summary>¿Solo trabajan con rugby?</summary><p>El foco inicial es rugby porque ahi esta la experiencia y la red mas fuerte. Mas adelante se pueden sumar otros deportes o caminos academicos.</p></details>
+        <details><summary>¿Cuando conviene empezar?</summary><p>Idealmente entre los 15 y 17 años para preparar ingles, notas, video y calendario. Tambien se pueden analizar casos de 18 a 21 años, pero con menos margen.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="eyebrow">Proximo paso</div>
+        <h2>Completa el formulario y llevemos el caso a una primera charla.</h2>
+        <p>Con el resumen armado, Agustin y Genaro pueden evaluar mejor el perfil antes de hablar con la familia.</p>
+      </div>
+      <div class="hero-ctas">
+        <a href="#evaluacion" class="btn btn-primary">Ir al formulario</a>
+        <a href="mailto:hola@vantage.com" class="btn btn-ghost">Enviar email</a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <div class="foot-row">
-      <div class="monogram">V</div>
-      <div class="foot-links">
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
-        <a href="mailto:hola@vantage.com">hola@vantage.com</a>
-      </div>
+  <div class="wrap foot">
+    <div class="wordmark"><span>V</span>ANTAGE</div>
+    <div class="foot-links">
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="mailto:hola@vantage.com">hola@vantage.com</a>
     </div>
-    <div class="foot-copy">© 2026 VANTAGE. Todos los derechos reservados.</div>
+    <div>© 2026 VANTAGE</div>
   </div>
 </footer>
 
+<script>
+  const WHATSAPP_NUMBER = "";
+  const form = document.querySelector("#leadForm");
+  const summary = document.querySelector("#leadSummary");
+  const progressBar = document.querySelector("#progressBar");
+  const progressText = document.querySelector("#progressText");
+  const requiredFields = Array.from(form.querySelectorAll("[required]"));
+  const draftKey = "vantageLeadDraft";
+
+  function getFormData(){
+    const data = new FormData(form);
+    return Object.fromEntries(data.entries());
+  }
+
+  function labelValue(value){
+    return value && String(value).trim() ? value : "Sin completar";
+  }
+
+  function escapeHtml(value){
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function updateProgress(){
+    const fields = Array.from(form.querySelectorAll("input, select, textarea")).filter(field => field.type !== "radio" || field.checked);
+    const named = new Set(fields.map(field => field.name).filter(Boolean));
+    const names = Array.from(new Set(Array.from(form.elements).map(field => field.name).filter(Boolean)));
+    const completed = names.filter(name => {
+      const group = form.querySelectorAll(`[name="${CSS.escape(name)}"]`);
+      return Array.from(group).some(field => field.type === "radio" ? field.checked : field.value.trim());
+    }).length;
+    const percent = Math.round((completed / names.length) * 100);
+    progressBar.style.width = `${percent}%`;
+    progressText.textContent = `${percent}% completo`;
+  }
+
+  function evaluateLead(data){
+    let score = 0;
+    if(["16-17","18"].includes(data.age)) score += 2;
+    if(data.english === "Intermedio") score += 1;
+    if(data.english === "Avanzado" || data.english === "Ya rendi TOEFL / Duolingo / IELTS") score += 2;
+    if(data.video === "Tengo video armado") score += 2;
+    if(data.video === "Tengo material pero no editado") score += 1;
+    if(data.intent === "Postular cuanto antes") score += 2;
+    if(data.intent === "Evaluar mi perfil") score += 1;
+    if(data.grades === "Promedio alto") score += 1;
+
+    if(score >= 7) return ["Perfil para revisar pronto", "Conviene agendar una llamada y pedir video, notas y fechas para evaluar universidades objetivo."];
+    if(score >= 4) return ["Buen caso para ordenar", "Hay señales positivas. El proximo paso es completar informacion faltante y definir tiempos reales."];
+    return ["Etapa exploratoria", "Primero conviene explicar el sistema, preparar ingles/video/notas y definir si el camino tiene sentido."];
+  }
+
+  function buildMessage(data, verdict){
+    return [
+      "Hola VANTAGE, quiero consultar por una evaluacion inicial.",
+      "",
+      `Jugador: ${labelValue(data.name)}`,
+      `Familia: ${labelValue(data.familyName)}`,
+      `Email: ${labelValue(data.email)}`,
+      `WhatsApp: ${labelValue(data.phone)}`,
+      `Edad: ${labelValue(data.age)}`,
+      `Egreso: ${labelValue(data.graduation)}`,
+      `Club/colegio: ${labelValue(data.club)}`,
+      `Posicion: ${labelValue(data.position)}`,
+      `Ingles: ${labelValue(data.english)}`,
+      `Academico: ${labelValue(data.grades)}`,
+      `Busca: ${labelValue(data.intent)}`,
+      `Video: ${labelValue(data.video)}`,
+      `Presupuesto: ${labelValue(data.budget)}`,
+      `Diagnostico web: ${verdict[0]}`,
+      "",
+      `Notas: ${labelValue(data.notes)}`
+    ].join("\n");
+  }
+
+  function renderSummary(data){
+    const verdict = evaluateLead(data);
+    const message = buildMessage(data, verdict);
+    const encoded = encodeURIComponent(message);
+    const whatsappHref = WHATSAPP_NUMBER
+      ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`
+      : `https://wa.me/?text=${encoded}`;
+    const mailHref = `mailto:hola@vantage.com?subject=${encodeURIComponent("Evaluacion inicial VANTAGE")}&body=${encoded}`;
+
+    summary.style.display = "block";
+    summary.innerHTML = `
+      <h3>Resumen para la primera reunion</h3>
+      <span class="status-pill">${verdict[0]}</span>
+      <p style="margin-top:10px;color:var(--muted);font-size:14px">${verdict[1]}</p>
+      <div class="summary-list">
+        <div class="summary-item"><b>Jugador</b><span>${escapeHtml(labelValue(data.name))}</span></div>
+        <div class="summary-item"><b>Etapa</b><span>${escapeHtml(labelValue(data.intent))}</span></div>
+        <div class="summary-item"><b>Rugby</b><span>${escapeHtml(labelValue(data.club))} / ${escapeHtml(labelValue(data.position))}</span></div>
+        <div class="summary-item"><b>Preparacion</b><span>${escapeHtml(labelValue(data.english))} / ${escapeHtml(labelValue(data.video))}</span></div>
+      </div>
+      <div class="form-actions">
+        <a class="btn btn-primary" href="${whatsappHref}" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        <a class="btn btn-light" href="${mailHref}">Enviar por email</a>
+      </div>
+    `;
+    summary.scrollIntoView({behavior:"smooth", block:"nearest"});
+  }
+
+  form.addEventListener("input", updateProgress);
+  form.addEventListener("change", updateProgress);
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    if(!form.reportValidity()) return;
+    const data = getFormData();
+    localStorage.setItem(draftKey, JSON.stringify(data));
+    renderSummary(data);
+  });
+  form.addEventListener("reset", () => {
+    setTimeout(() => {
+      localStorage.removeItem(draftKey);
+      summary.style.display = "none";
+      updateProgress();
+    }, 0);
+  });
+  document.querySelector("#saveDraft").addEventListener("click", () => {
+    localStorage.setItem(draftKey, JSON.stringify(getFormData()));
+    document.querySelector("#saveDraft").textContent = "Borrador guardado";
+    setTimeout(() => document.querySelector("#saveDraft").textContent = "Guardar borrador", 1600);
+  });
+
+  const saved = localStorage.getItem(draftKey);
+  if(saved){
+    const data = JSON.parse(saved);
+    Object.entries(data).forEach(([name,value]) => {
+      const field = form.querySelector(`[name="${CSS.escape(name)}"]`);
+      if(!field) return;
+      if(field.type === "radio"){
+        const radio = form.querySelector(`[name="${CSS.escape(name)}"][value="${CSS.escape(value)}"]`);
+        if(radio) radio.checked = true;
+      } else {
+        field.value = value;
+      }
+    });
+  }
+  updateProgress();
+
+  document.querySelector("#quickCheck").addEventListener("click", () => {
+    const age = document.querySelector("#quickAge").value;
+    const english = document.querySelector("#quickEnglish").value;
+    const stage = document.querySelector("#quickStage").value;
+    const box = document.querySelector("#quickResult");
+    let title = "Completa las tres respuestas";
+    let text = "Con edad, ingles y objetivo podemos sugerir un primer paso mas serio.";
+    if(age && english && stage){
+      if(stage === "apply" && english !== "low"){
+        title = "Agendar evaluacion completa";
+        text = "Ya estas cerca de una conversacion concreta. El formulario largo ayuda a revisar perfil, video y tiempos.";
+      } else if(age === "early" || english === "low"){
+        title = "Preparar el camino";
+        text = "Conviene trabajar ingles, notas, video y objetivos antes de hablar de postulaciones.";
+      } else {
+        title = "Buen momento para diagnostico";
+        text = "Hay margen para ordenar el perfil y entender que universidades podrian tener sentido.";
+      }
+    }
+    box.style.display = "block";
+    box.innerHTML = `<strong>${title}</strong><span>${text}</span>`;
+  });
+</script>
 </body>
 </html>
