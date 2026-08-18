@@ -32,6 +32,9 @@
   .brand{font-size:32px;font-weight:600;letter-spacing:.01em;color:var(--navy);white-space:nowrap}
   .brand span{color:var(--blue)}
   .brand .usa{color:var(--red);font-family:Inter,system-ui,sans-serif;font-weight:900;letter-spacing:.04em}
+  .logo-mark{display:inline-flex;align-items:center;flex:0 0 auto}
+  .logo-mark img{display:block;height:72px;width:auto}
+  footer .logo-mark img{height:58px}
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border-radius:8px;border:1px solid transparent;font-size:14px;font-weight:800;cursor:pointer}
   .btn svg{width:18px;height:18px;flex:0 0 auto}
   .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 22px rgba(37,211,102,.22)}
@@ -119,6 +122,8 @@
     .wrap{width:min(100% - 28px,1120px)}
     nav{height:72px}
     .brand{font-size:26px}
+    .logo-mark img{height:58px}
+    footer .logo-mark img{height:50px}
     .hero{padding:54px 0 42px}
     section{padding:48px 0}
     .grid,.choices{grid-template-columns:1fr}
@@ -138,7 +143,9 @@
 <header>
   <div class="wrap">
     <nav>
-      <a class="brand" href="#"><span>Campus</span> <span class="usa">USA</span></a>
+      <a class="logo-mark" href="#" aria-label="Campus USA">
+        <img src="assets/campus-usa-logo.jpg" alt="Campus USA">
+      </a>
       <div class="nav-links">
         <a href="#becas">Becas</a>
         <a href="#proceso">Proceso</a>
@@ -450,7 +457,9 @@
 
 <footer>
   <div class="wrap foot">
-    <div class="brand"><span>Campus</span> <span class="usa">USA</span></div>
+    <div class="logo-mark">
+      <img src="assets/campus-usa-logo.jpg" alt="Campus USA">
+    </div>
     <div class="foot-links">
       <a href="tel:+17046762602">+1 704 676 2602</a>
       <a href="mailto:hola@vantage.com">hola@vantage.com</a>
