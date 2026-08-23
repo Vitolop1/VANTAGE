@@ -10,16 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Graduate&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#123047;
+    --ink:#0b2239;
     --muted:#5f788a;
-    --navy:#0b5f86;
-    --blue:#63b7e6;
+    --navy:#061d36;
+    --blue:#0f5f92;
     --red:#d4af37;
     --paper:#ffffff;
     --line:#d8eaf4;
     --gold:#d4af37;
     --green:#d4af37;
     --sky:#eef9ff;
+    --hero-blue:#061d36;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -33,7 +34,7 @@
   .brand span{color:var(--blue)}
   .brand .usa{color:var(--red);font-family:Inter,system-ui,sans-serif;font-weight:900;letter-spacing:.04em}
   .logo-mark{display:inline-flex;align-items:center;flex:0 0 auto}
-  .logo-mark img{display:block;height:86px;width:auto;max-width:430px;object-fit:contain}
+  .logo-mark img{display:block;height:78px;width:auto;max-width:390px;object-fit:contain}
   .logo-text{display:inline-flex;align-items:center;gap:10px;font-family:Graduate,Georgia,serif;font-size:37px;font-weight:400;letter-spacing:.02em;color:#fff;text-transform:uppercase}
   .logo-text .usa-word{background:#fff;color:var(--red);padding:6px 10px 5px;border-radius:5px;letter-spacing:.02em}
   footer .logo-mark img{height:62px}
@@ -46,25 +47,27 @@
   .btn-light{background:#fff;border-color:var(--line);color:var(--ink)}
   .eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
 
-  .top-strip{position:sticky;top:0;z-index:30;background:var(--gold);color:#123047;font-size:15px;font-weight:800}
+  .top-strip{position:sticky;top:0;z-index:30;background:#020b15;color:var(--gold);font-size:15px;font-weight:800}
   .top-strip .wrap{min-height:34px;display:flex;align-items:center;justify-content:flex-end;gap:24px}
   .top-strip a{display:inline-flex;align-items:center;gap:7px}
-  header{position:sticky;top:34px;z-index:25;background:var(--blue);color:#fff;border-bottom:1px solid rgba(255,255,255,.35)}
+  header{position:sticky;top:34px;z-index:25;background:var(--hero-blue);color:#fff;border-bottom:1px solid rgba(212,175,55,.28)}
   header .brand,header .brand span{color:#fff}
   header .brand .usa{background:#fff;color:var(--red);padding:2px 7px;border-radius:4px}
-  nav{height:110px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-  .nav-links{display:flex;align-items:center;gap:26px;font-size:16px;font-weight:800;color:rgba(255,255,255,.92)}
-  .nav-links a:hover{color:#fff}
+  nav{height:98px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+  .nav-links{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:800;color:rgba(255,255,255,.9)}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-actions{display:flex;justify-content:flex-end}
 
-  .hero{padding:76px 0 54px;background:linear-gradient(90deg,rgba(255,255,255,.97),rgba(238,249,255,.86)),url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=78") center/cover}
-  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:44px;align-items:center}
-  .hero h1{max-width:790px;margin-top:12px;font-size:clamp(42px,6vw,76px);line-height:1}
-  .hero p{max-width:620px;margin-top:20px;font-size:18px;color:var(--muted)}
-  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-  .hero-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}
-  .hero-card h2{font-family:Inter,system-ui,sans-serif;font-size:18px;margin-top:8px}
-  .hero-list{display:grid;gap:12px;margin-top:16px;color:var(--muted);font-size:14px}
-  .hero-list div{padding-top:12px;border-top:1px solid var(--line)}
+  .hero{min-height:620px;padding:84px 0 92px;background:var(--hero-blue);color:#fff;display:flex;align-items:center;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 36%),url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=78") center/cover;opacity:.15}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-logo{display:flex;justify-content:center}
+  .hero-logo img{width:min(760px,92vw);height:auto;display:block}
+  .hero-card{display:none}
+  .hero h1{max-width:900px;margin:34px auto 0;font-size:clamp(36px,5.8vw,72px);line-height:1.02;color:#fff}
+  .hero p{max-width:720px;margin:22px auto 0;font-size:19px;color:rgba(255,255,255,.82)}
+  .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px}
+  .hero .btn-light{background:transparent;border-color:rgba(212,175,55,.55);color:#fff}
 
   section{padding:64px 0;scroll-margin-top:154px}
   .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:26px}
@@ -79,6 +82,13 @@
   .steps.six{grid-template-columns:repeat(6,1fr)}
   .steps.six .step{text-align:center}
   .steps.six .step b{margin-left:auto;margin-right:auto;background:var(--red);color:#fff}
+  .services{background:#fff}
+  .service-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .service-card{background:var(--hero-blue);color:#fff;border:1px solid rgba(212,175,55,.35);border-radius:8px;padding:24px;min-height:270px;display:flex;flex-direction:column;align-items:flex-start}
+  .service-icon{width:72px;height:72px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:18px}
+  .service-icon svg{width:42px;height:42px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .service-card h3{font-family:Graduate,Georgia,serif;font-size:18px;line-height:1.18;color:#fff}
+  .service-card p{margin-top:12px;color:rgba(255,255,255,.76);font-size:14px}
 
   .form-section{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);scroll-margin-top:190px;padding-top:86px}
   .form-layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:28px;align-items:start}
@@ -119,21 +129,25 @@
   .foot-links{display:flex;gap:18px;flex-wrap:wrap}
 
   @media (max-width:880px){
+    nav{grid-template-columns:auto 1fr;justify-content:space-between}
     .nav-links{display:none}
-    .hero-grid,.form-layout{grid-template-columns:1fr}
+    .nav-actions{display:flex;justify-content:flex-end}
+    .nav-actions a:not(.btn){display:none}
+    .form-layout{grid-template-columns:1fr}
     .form-note{position:static}
     .steps,.steps.six{grid-template-columns:1fr}
+    .service-grid{grid-template-columns:1fr}
     .section-head,.contact-row{display:grid}
   }
   @media (max-width:620px){
     .wrap{width:min(100% - 28px,1120px)}
-    nav{height:86px}
+    nav{height:78px}
     .brand{font-size:26px}
-    .logo-mark img{height:58px;max-width:190px}
+    .logo-mark img{height:52px;max-width:190px}
     .logo-text{font-size:20px}
     footer .logo-mark img{height:54px}
     footer .logo-text{font-size:18px}
-    .hero{padding:54px 0 42px}
+    .hero{min-height:560px;padding:68px 0 72px}
     section{padding:48px 0}
     section{scroll-margin-top:138px}
     .form-section{scroll-margin-top:166px;padding-top:64px}
@@ -155,31 +169,36 @@
 <header>
   <div class="wrap">
     <nav>
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#referentes">Referentes</a>
+      </div>
       <a class="logo-mark" href="#" aria-label="Impacto USA">
         <img src="assets/impacto-usa-horizontal.jpg" alt="Impacto USA">
       </a>
-      <div class="nav-links">
-        <a href="#becas">Becas</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#referentes">Referentes</a>
+      <div class="nav-links nav-actions">
         <a href="#evaluacion">Evaluacion</a>
         <a href="#contacto">Contacto</a>
+        <a class="btn btn-primary" href="#evaluacion">Empezar</a>
       </div>
-      <a class="btn btn-primary" href="#evaluacion">Empezar</a>
     </nav>
   </div>
 </header>
 
 <main>
   <section class="hero">
-    <div class="wrap hero-grid">
+    <div class="wrap">
+      <div class="hero-logo">
+        <img src="assets/impacto-usa-horizontal.jpg" alt="Impacto USA">
+      </div>
       <div>
         <div class="eyebrow">Argentina a Estados Unidos</div>
-        <h1>Becas deportivas, academicas y culturales para estudiar en USA.</h1>
-        <p>Acompanamos a estudiantes, deportistas y familias a entender que oportunidades reales pueden buscar en universidades de Estados Unidos.</p>
+        <h1>Build your future through sport, education and global opportunity.</h1>
+        <p>Acompanamos a estudiantes, deportistas y familias a encontrar caminos reales hacia universidades, becas y experiencias en Estados Unidos.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#evaluacion">Completar evaluacion</a>
-          <a class="btn btn-light" href="#becas">Ver becas</a>
+          <a class="btn btn-light" href="#servicios">Ver servicios</a>
         </div>
       </div>
       <aside class="hero-card">
@@ -194,45 +213,50 @@
     </div>
   </section>
 
-  <section id="becas">
+  <section id="servicios" class="services">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Becas</div>
-          <h2>Distintos caminos para llegar a estudiar afuera.</h2>
+          <div class="eyebrow">Servicios</div>
+          <h2>Programas pensados para abrir oportunidades reales.</h2>
         </div>
-        <p>No todos buscan lo mismo. Primero entendemos el perfil y despues vemos que oportunidad tiene mas sentido.</p>
+        <p>Cada area tiene un objetivo claro: desarrollar el perfil, ordenar el proceso y conectar con oportunidades internacionales.</p>
       </div>
-      <div class="steps six">
-        <article class="step">
-          <b>AC</b>
-          <h3>Academicas</h3>
-          <p>Para estudiantes con buen rendimiento escolar y objetivos universitarios claros.</p>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M9 31c5.5 6.5 18.7 8.7 30 2.5C36.8 21.2 26.7 10.4 14.4 8.7 7.8 17.2 6.2 25.7 9 31Z"/><path d="M14 29c6.8-1.8 13.2-5.7 18.5-11.5"/><path d="M18 19l5 5M23 15l5 5M13 24l5 5"/></svg>
+          </div>
+          <h3>Rugby Development</h3>
+          <p>Desarrollo deportivo, lectura de nivel, armado de perfil y orientacion para competir en programas universitarios.</p>
         </article>
-        <article class="step">
-          <b>AR</b>
-          <h3>Artisticas</h3>
-          <p>Para perfiles vinculados a arte, musica, danza, teatro o portfolio creativo.</p>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="10" r="5"/><path d="M22 16l-5 10 9 3 6 11"/><path d="M25 19l8 5 6-2"/><path d="M17 26l-5 12"/><path d="M28 29l-9 11"/></svg>
+          </div>
+          <h3>Athletic Management</h3>
+          <p>Acompanamiento del atleta: objetivos, comunicacion, documentacion, calendario y decisiones clave del proceso.</p>
         </article>
-        <article class="step">
-          <b>DP</b>
-          <h3>Deportivas</h3>
-          <p>Para quienes compiten en un deporte y quieren combinar estudio con alto rendimiento.</p>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="14"/><path d="M10 24h28M24 10c4 4.3 6 9 6 14s-2 9.7-6 14M24 10c-4 4.3-6 9-6 14s2 9.7 6 14"/><path d="M36 13l4-4M40 9h-7M40 9v7"/></svg>
+          </div>
+          <h3>Global Placements</h3>
+          <p>Busqueda de universidades, colleges y programas alineados al perfil academico, deportivo, cultural y economico.</p>
         </article>
-        <article class="step">
-          <b>TC</b>
-          <h3>Terciarios</h3>
-          <p>Opciones de colleges y programas mas cortos segun perfil, tiempos y presupuesto.</p>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M5 18l19-8 19 8-19 8L5 18Z"/><path d="M14 22v10c5.8 4 14.2 4 20 0V22"/><path d="M40 20v12"/></svg>
+          </div>
+          <h3>Scholarship Opportunities</h3>
+          <p>Evaluacion de becas deportivas, academicas, artisticas y culturales segun posibilidades reales.</p>
         </article>
-        <article class="step">
-          <b>IN</b>
-          <h3>Intercambios</h3>
-          <p>Experiencias internacionales para estudiar, mejorar ingles y vivir el campus.</p>
-        </article>
-        <article class="step">
-          <b>DC</b>
-          <h3>Diversidad cultural</h3>
-          <p>Programas para perfiles multiculturales, academicos y de intercambio.</p>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="15" r="6"/><circle cx="12" cy="20" r="4"/><circle cx="36" cy="20" r="4"/><path d="M14 38c1.6-7 5-11 10-11s8.4 4 10 11"/><path d="M4 36c1.2-5 3.8-8 8-8 2 0 3.6.6 5 1.8"/><path d="M31 29.8c1.4-1.2 3-1.8 5-1.8 4.2 0 6.8 3 8 8"/></svg>
+          </div>
+          <h3>Community Impact</h3>
+          <p>Construccion de comunidad, red de familias, referentes y experiencias que sostienen el camino internacional.</p>
         </article>
       </div>
     </div>
@@ -393,12 +417,11 @@
             <label for="path">Que quiere buscar</label>
             <select id="path" name="path" required>
               <option value="">Elegir</option>
-              <option>Beca deportiva</option>
-              <option>Beca academica</option>
-              <option>Beca artistica</option>
-              <option>Beca cultural / intercambio</option>
-              <option>Terciario / college</option>
-              <option>Diversidad cultural</option>
+              <option>Rugby Development</option>
+              <option>Athletic Management</option>
+              <option>Global Placements</option>
+              <option>Scholarship Opportunities</option>
+              <option>Community Impact</option>
               <option>Todavia no lo tengo claro</option>
             </select>
           </div>
