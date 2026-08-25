@@ -33,15 +33,13 @@
   .brand{font-size:32px;font-weight:600;letter-spacing:.01em;color:var(--navy);white-space:nowrap}
   .brand span{color:var(--blue)}
   .brand .usa{color:var(--red);font-family:Inter,system-ui,sans-serif;font-weight:900;letter-spacing:.04em}
-  .logo-mark{display:inline-flex;align-items:center;gap:12px;flex:0 0 auto}
-  .brand-shield{width:78px;height:78px;overflow:hidden;display:inline-flex;align-items:center;justify-content:flex-start;flex:0 0 auto}
-  .brand-shield img{display:block;height:78px;width:auto;max-width:none;object-fit:contain}
-  .logo-text{display:inline-flex;align-items:center;gap:10px;font-family:Graduate,Georgia,serif;font-size:37px;font-weight:400;letter-spacing:.02em;color:#fff;text-transform:uppercase}
-  .logo-text .usa-word{background:#fff;color:#b51f32;padding:6px 10px 5px;border-radius:5px;letter-spacing:.02em}
-  footer .brand-shield{width:62px;height:62px}
-  footer .brand-shield img{height:62px}
-  footer .logo-text{color:var(--navy);font-size:24px}
-  footer .logo-text .usa-word{background:var(--blue);color:#fff}
+  .logo-mark{display:inline-flex;align-items:center;gap:10px;flex:0 0 auto}
+  .impact-logo-crop{position:relative;display:inline-block;width:240px;height:48px;overflow:hidden;flex:0 0 auto}
+  .impact-logo-crop img{position:absolute;width:445px;max-width:none;left:-106px;top:-68px}
+  .logo-usa{display:inline-flex;align-items:center;min-height:46px;background:#fff;color:#b51f32;padding:6px 11px 5px;border-radius:5px;font-family:Graduate,Georgia,serif;font-size:33px;line-height:1;letter-spacing:.02em;text-transform:uppercase}
+  footer .impact-logo-crop{width:172px;height:34px}
+  footer .impact-logo-crop img{width:318px;left:-76px;top:-49px}
+  footer .logo-usa{min-height:34px;padding:5px 8px 4px;background:var(--blue);color:#fff;font-size:23px}
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border-radius:8px;border:1px solid transparent;font-size:14px;font-weight:800;cursor:pointer}
   .btn svg{width:18px;height:18px;flex:0 0 auto}
   .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 22px rgba(37,211,102,.26)}
@@ -64,11 +62,10 @@
   .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 36%),url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=78") center/cover;opacity:.15}
   .hero .wrap{position:relative;z-index:1}
   .hero-logo{display:flex;justify-content:center}
-  .hero-logo .logo-mark{gap:20px}
-  .hero-logo .brand-shield{width:150px;height:150px}
-  .hero-logo .brand-shield img{height:150px}
-  .hero-logo .logo-text{font-size:clamp(46px,8vw,104px);line-height:1}
-  .hero-logo .logo-text .usa-word{padding:10px 16px 8px;border-radius:8px}
+  .hero-logo .logo-mark{gap:18px}
+  .hero-logo .impact-logo-crop{width:min(520px,62vw);height:106px}
+  .hero-logo .impact-logo-crop img{width:963px;left:-236px;top:-148px}
+  .hero-logo .logo-usa{min-height:100px;padding:12px 17px 10px;border-radius:8px;font-size:clamp(46px,8vw,96px)}
   .hero-card{display:none}
   .hero h1{max-width:900px;margin:34px auto 0;font-size:clamp(36px,5.8vw,72px);line-height:1.02;color:#fff}
   .hero p{max-width:720px;margin:22px auto 0;font-size:19px;color:rgba(255,255,255,.82)}
@@ -149,10 +146,17 @@
     .wrap{width:min(100% - 28px,1120px)}
     nav{height:78px}
     .brand{font-size:26px}
-    .logo-mark img{height:52px;max-width:190px}
-    .logo-text{font-size:20px}
-    footer .logo-mark img{height:54px}
-    footer .logo-text{font-size:18px}
+    .logo-mark{gap:7px}
+    .impact-logo-crop{width:150px;height:30px}
+    .impact-logo-crop img{width:278px;left:-66px;top:-42px}
+    .logo-usa{min-height:30px;padding:4px 7px 3px;font-size:19px}
+    .hero-logo .logo-mark{gap:8px}
+    .hero-logo .impact-logo-crop{width:min(280px,66vw);height:57px}
+    .hero-logo .impact-logo-crop img{width:520px;left:-127px;top:-80px}
+    .hero-logo .logo-usa{min-height:54px;padding:7px 9px 6px;font-size:clamp(29px,10vw,48px)}
+    footer .impact-logo-crop{width:140px;height:28px}
+    footer .impact-logo-crop img{width:260px;left:-62px;top:-40px}
+    footer .logo-usa{min-height:28px;font-size:18px}
     .hero{min-height:560px;padding:68px 0 72px}
     section{padding:48px 0}
     section{scroll-margin-top:138px}
@@ -181,8 +185,8 @@
         <a href="#referentes">Referentes</a>
       </div>
       <a class="logo-mark" href="#" aria-label="Impact USA">
-        <span class="brand-shield"><img src="assets/impacto-usa-horizontal.jpg" alt=""></span>
-        <span class="logo-text">Impact <span class="usa-word">USA</span></span>
+        <span class="impact-logo-crop"><img src="assets/WhatsApp Image 2026-08-23 at 19.25.02.jpeg" alt=""></span>
+        <span class="logo-usa">USA</span>
       </a>
       <div class="nav-links nav-actions">
         <a href="#evaluacion">Evaluacion</a>
@@ -198,8 +202,8 @@
     <div class="wrap">
       <div class="hero-logo">
         <div class="logo-mark" aria-label="Impact USA">
-          <span class="brand-shield"><img src="assets/impacto-usa-horizontal.jpg" alt=""></span>
-          <span class="logo-text">Impact <span class="usa-word">USA</span></span>
+          <span class="impact-logo-crop"><img src="assets/WhatsApp Image 2026-08-23 at 19.25.02.jpeg" alt=""></span>
+          <span class="logo-usa">USA</span>
         </div>
       </div>
       <div>
@@ -502,8 +506,8 @@
 <footer>
   <div class="wrap foot">
     <div class="logo-mark">
-      <span class="brand-shield"><img src="assets/impacto-usa-horizontal.jpg" alt=""></span>
-      <span class="logo-text">Impact <span class="usa-word">USA</span></span>
+      <span class="impact-logo-crop"><img src="assets/WhatsApp Image 2026-08-23 at 19.25.02.jpeg" alt=""></span>
+      <span class="logo-usa">USA</span>
     </div>
     <div class="foot-links">
       <a href="tel:+17046762602">+1 704 676 2602</a>
