@@ -37,7 +37,7 @@
   header{position:sticky;top:34px;z-index:45;background:rgba(13,27,61,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,193,7,.28)}
   nav{height:86px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
   .logo-mark{display:inline-flex;align-items:center}
-  .logo-img{display:block;width:250px;height:auto}
+  .logo-img{display:block;width:210px;height:auto;border-radius:4px}
   .nav-links{display:flex;align-items:center;gap:22px;color:rgba(255,255,255,.92);font-size:13px;font-weight:800}
   .nav-links a{transition:color .25s ease}
   .nav-links a:hover{color:var(--gold)}
@@ -59,9 +59,8 @@
   .hero{min-height:690px;display:flex;align-items:center;padding:92px 0 104px;background:radial-gradient(circle at 18% 18%,rgba(232,62,140,.32),transparent 28%),radial-gradient(circle at 78% 20%,rgba(255,122,89,.22),transparent 25%),linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;position:relative;overflow:hidden;text-align:center}
   .hero::after{content:"";position:absolute;inset:auto -10% -42% -10%;height:52%;background:radial-gradient(ellipse at center,rgba(0,180,216,.18),transparent 62%)}
   .hero .wrap{position:relative;z-index:1}
-  .hero-brand{display:inline-flex;flex-direction:column;align-items:center;gap:10px;padding:30px 38px 24px;background:rgba(7,18,40,.72);border:1px solid rgba(255,193,7,.42);border-radius:10px;box-shadow:0 28px 80px rgba(0,0,0,.34)}
-  .hero-brand img{width:min(620px,78vw);height:auto}
-  .brand-tagline{font-size:14px;font-weight:900;letter-spacing:.09em;text-transform:uppercase;color:var(--gold)}
+  .hero-brand{display:inline-flex;align-items:center;justify-content:center;padding:10px;background:rgba(7,18,40,.86);border:1px solid rgba(255,193,7,.42);border-radius:10px;box-shadow:0 28px 80px rgba(0,0,0,.34)}
+  .hero-brand img{width:min(620px,78vw);height:auto;border-radius:6px}
   .hero h1{max-width:900px;margin:34px auto 0;font-size:clamp(38px,6vw,76px);line-height:1.02}
   .hero p{max-width:760px;margin:18px auto 0;color:#dbe9f5;font-size:clamp(17px,2vw,21px);font-weight:500}
   .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px}
@@ -78,8 +77,8 @@
   .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .service-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 18px 44px rgba(13,27,61,.07);transition:transform .25s ease,box-shadow .25s ease}
   .service-card:hover{transform:translateY(-3px);box-shadow:0 24px 56px rgba(13,27,61,.11)}
-  .service-icon{width:58px;height:58px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;background:var(--light)}
-  .service-icon svg{width:34px;height:34px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .service-icon{width:72px;height:62px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;background:#fff}
+  .service-icon img{display:block;max-width:62px;max-height:54px;object-fit:contain}
   .cyan{color:var(--cyan)} .purple{color:var(--purple)} .gold{color:var(--gold)} .pink{color:var(--magenta)} .orange{color:var(--orange)}
   .service-card h3{font-size:19px;color:var(--navy)}
   .service-card p{margin-top:8px;color:var(--muted);font-size:14px;font-weight:500}
@@ -108,6 +107,10 @@
   .person span{display:inline-flex;color:var(--cyan);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
   .person h3{margin-top:8px;color:var(--navy)}
   .person p{margin-top:8px;color:var(--muted);font-size:14px;font-weight:500}
+
+  .about-layout{display:grid;grid-template-columns:1fr 420px;gap:34px;align-items:center}
+  .brand-preview{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:0 18px 50px rgba(13,27,61,.08)}
+  .brand-preview img{display:block;width:100%;height:auto;border-radius:8px}
 
   .form-section{background:#fff}
   .form-layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:28px;align-items:start}
@@ -152,7 +155,7 @@
     .mobile-toggle{display:inline-block;justify-self:end}
     header.open .mobile-menu{display:block}
     .service-grid,.steps,.people-grid{grid-template-columns:1fr}
-    .value-card,.form-layout{grid-template-columns:1fr}
+    .value-card,.form-layout,.about-layout{grid-template-columns:1fr}
     .form-note{position:static}
     .section-head,.cta-row,.contact-row{display:grid}
     .trust-bar{grid-template-columns:1fr}
@@ -162,9 +165,8 @@
     nav{height:76px}
     .logo-img{width:168px}
     .hero{min-height:620px;padding:66px 0 76px}
-    .hero-brand{padding:20px 16px 18px;width:100%}
+    .hero-brand{padding:8px;width:100%}
     .hero-brand img{width:min(340px,86vw)}
-    .brand-tagline{font-size:11px}
     section{padding:56px 0;scroll-margin-top:122px}
     .grid,.choices{grid-template-columns:1fr}
     .top-strip .wrap{justify-content:center;gap:14px;font-size:12px}
@@ -188,7 +190,7 @@
         <a href="#proceso">Proceso de Becas</a>
       </div>
       <a class="logo-mark" href="#inicio" aria-label="Impact Global Agency">
-        <img class="logo-img" src="assets/impact-logo-white.png" alt="Impact Global Agency Logo">
+        <img class="logo-img" src="assets/IMPACT LOGO AZUL.png" alt="Impact Global Agency Logo">
       </a>
       <div class="nav-links nav-actions desktop-only">
         <a href="#casos">Casos de Exito</a>
@@ -216,8 +218,7 @@
   <section class="hero" id="inicio">
     <div class="wrap">
       <div class="hero-brand">
-        <img src="assets/impact-logo-white.png" alt="Impact Global Agency Logo">
-        <p class="brand-tagline">Tu exito, nuestra prioridad.</p>
+        <img src="assets/IMPACT LOGO AZUL.png" alt="Impact Global Agency Logo">
       </div>
       <h1>Impulsamos tu talento al siguiente nivel</h1>
       <p>Conectamos atletas y estudiantes de Latinoamerica con programas universitarios y becas deportivas en Estados Unidos.</p>
@@ -244,32 +245,32 @@
       </div>
       <div class="service-grid">
         <article class="service-card">
-          <div class="service-icon cyan"><svg viewBox="0 0 48 48"><circle cx="23" cy="23" r="14"/><path d="M9 23h28M23 9c4 4 6 8.7 6 14s-2 10-6 14M23 9c-4 4-6 8.7-6 14s2 10 6 14"/><path d="M35 14l8-4-3 8"/></svg></div>
+          <div class="service-icon cyan"><img src="assets/icon-oportunidades.png" alt=""></div>
           <h3>Oportunidades Sin Fronteras</h3>
           <p>Busqueda de universidades y programas alineados al perfil real.</p>
         </article>
         <article class="service-card">
-          <div class="service-icon purple"><svg viewBox="0 0 48 48"><path d="M5 18l19-8 19 8-19 8L5 18Z"/><path d="M14 22v10c6 4 14 4 20 0V22"/><path d="M40 20v12"/></svg></div>
+          <div class="service-icon purple"><img src="assets/icon-educacion.png" alt=""></div>
           <h3>Educacion de Calidad</h3>
           <p>Opciones academicas para estudiar y crecer en Estados Unidos.</p>
         </article>
         <article class="service-card">
-          <div class="service-icon gold"><svg viewBox="0 0 48 48"><path d="M16 8h16v8c0 8-3.5 13-8 13s-8-5-8-13V8Z"/><path d="M16 13H8c0 7 3 11 9 12M32 13h8c0 7-3 11-9 12"/><path d="M24 29v8M17 40h14"/></svg></div>
+          <div class="service-icon gold"><img src="assets/icon-becas.png" alt=""></div>
           <h3>Becas y Logros</h3>
           <p>Evaluacion de becas deportivas, academicas, artisticas y culturales.</p>
         </article>
         <article class="service-card">
-          <div class="service-icon pink"><svg viewBox="0 0 48 48"><circle cx="24" cy="15" r="6"/><circle cx="12" cy="20" r="4"/><circle cx="36" cy="20" r="4"/><path d="M14 38c2-7 5-11 10-11s8 4 10 11"/><path d="M4 36c1-5 4-8 8-8 2 0 4 .7 5 2"/><path d="M31 30c1-1.3 3-2 5-2 4 0 7 3 8 8"/></svg></div>
+          <div class="service-icon pink"><img src="assets/icon-acompanamiento.png" alt=""></div>
           <h3>Acompanamiento Personalizado</h3>
           <p>Orden, seguimiento y decisiones claras para cada familia.</p>
         </article>
         <article class="service-card">
-          <div class="service-icon orange"><svg viewBox="0 0 48 48"><path d="M5 39l13-20 8 11 5-7 12 16H5Z"/><path d="M31 23V8l9 4-9 4"/><path d="M31 8v15"/></svg></div>
+          <div class="service-icon orange"><img src="assets/icon-camino.png" alt=""></div>
           <h3>Tu Camino, Tu Futuro</h3>
           <p>Plan de accion segun edad, ingles, carrera, deporte y budget.</p>
         </article>
         <article class="service-card">
-          <div class="service-icon cyan"><svg viewBox="0 0 48 48"><path d="M42 6L6 22l15 5 5 15L42 6Z"/><path d="M21 27l9-9"/></svg></div>
+          <div class="service-icon cyan"><img src="assets/icon-talento.png" alt=""></div>
           <h3>Impulsamos Tu Talento</h3>
           <p>Perfil, video, comunicacion y postulaciones mejor presentadas.</p>
         </article>
@@ -339,13 +340,16 @@
   </section>
 
   <section id="nosotros">
-    <div class="wrap">
+    <div class="wrap about-layout">
       <div class="section-head">
         <div>
           <div class="eyebrow">Sobre Nosotros</div>
           <h2>Experiencia deportiva, mirada academica y proceso claro.</h2>
         </div>
         <p>Impact combina scouting, red de contactos, administracion y soporte digital para que cada familia entienda sus opciones antes de avanzar.</p>
+      </div>
+      <div class="brand-preview">
+        <img src="assets/VARIACION.png" alt="Logo horizontal de Impact con lema de marca">
       </div>
     </div>
   </section>
@@ -411,7 +415,7 @@
 <footer>
   <div class="wrap foot">
     <a class="logo-mark" href="#inicio" aria-label="Impact Global Agency">
-      <img class="logo-img" src="assets/impact-logo-white.png" alt="Impact Global Agency Logo">
+      <img class="logo-img" src="assets/IMPACT LOGO AZUL.png" alt="Impact Global Agency Logo">
     </a>
     <div class="foot-links">
       <a href="#servicios">Servicios</a>
