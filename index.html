@@ -38,8 +38,8 @@
   .wrap{width:min(1160px,calc(100% - 40px));margin:0 auto}
   .top-strip{position:sticky;top:0;z-index:50;background:#030914;color:var(--gold);font-size:14px;font-weight:800}
   .top-strip .wrap{min-height:34px;display:flex;align-items:center;justify-content:flex-end;gap:24px}
-  header{position:sticky;top:34px;z-index:45;background:rgba(13,27,61,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,193,7,.28)}
-  nav{height:86px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+  header{position:sticky;top:34px;z-index:45;background:var(--navy);border-bottom:1px solid rgba(255,193,7,.28)}
+  nav{height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}
   .logo-mark{display:inline-flex;align-items:center}
   .logo-img{display:block;width:230px;height:auto}
   .nav-links{display:flex;align-items:center;gap:22px;color:rgba(255,255,255,.92);font-size:13px;font-weight:800}
@@ -60,8 +60,8 @@
   .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
   .eyebrow::before{content:"";width:28px;height:3px;border-radius:999px;background:linear-gradient(90deg,var(--magenta),var(--orange),var(--gold))}
 
-  .hero{min-height:690px;display:flex;align-items:center;padding:92px 0 104px;background:radial-gradient(circle at 18% 18%,rgba(232,62,140,.32),transparent 28%),radial-gradient(circle at 78% 20%,rgba(255,122,89,.22),transparent 25%),linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;position:relative;overflow:hidden;text-align:center}
-  .hero::after{content:"";position:absolute;inset:auto -10% -42% -10%;height:52%;background:radial-gradient(ellipse at center,rgba(0,180,216,.18),transparent 62%)}
+  .hero{min-height:690px;display:flex;align-items:center;padding:92px 0 104px;background:var(--navy);color:#fff;position:relative;overflow:hidden;text-align:center}
+  .hero::after{display:none}
   .hero .wrap{position:relative;z-index:1}
   .hero-brand{display:inline-flex;align-items:center;justify-content:center;padding:8px 0}
   .hero-brand img{width:min(720px,82vw);height:auto;filter:drop-shadow(0 22px 42px rgba(0,0,0,.34))}
@@ -100,7 +100,7 @@
   .step h3{font-size:19px;color:var(--navy)}
   .step p{margin-top:8px;color:var(--muted);font-size:14px;font-weight:500}
 
-  .cta-band{padding:58px 0;background:linear-gradient(135deg,var(--navy),var(--purple));color:#fff}
+  .cta-band{padding:58px 0;background:var(--navy);color:#fff;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
   .cta-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
   .cta-row h2{font-size:clamp(28px,4vw,46px);line-height:1.08}
   .cta-row p{margin-top:10px;color:#d5e0ef}
@@ -113,6 +113,10 @@
   .person p{margin-top:8px;color:var(--muted);font-size:14px;font-weight:500}
 
   .about-layout{display:grid;grid-template-columns:1fr 420px;gap:34px;align-items:center}
+  .about-layout .section-head{display:block;margin-bottom:0}
+  .about-layout .section-head p{max-width:720px;margin-top:16px;font-size:18px;line-height:1.65;color:var(--ink)}
+  .about-points{display:grid;gap:12px;margin-top:22px}
+  .about-point{border-left:4px solid var(--cyan);padding:10px 0 10px 14px;color:var(--muted);font-weight:600}
   .brand-preview{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:0 18px 50px rgba(13,27,61,.08)}
   .brand-preview img{display:block;width:100%;height:auto;border-radius:8px}
 
@@ -154,7 +158,7 @@
   .foot-links{display:flex;gap:18px;flex-wrap:wrap}
 
   @media (max-width:940px){
-    nav{grid-template-columns:auto 1fr auto}
+    nav{display:grid;grid-template-columns:auto 1fr auto}
     .desktop-only{display:none}
     .mobile-toggle{display:inline-block;justify-self:end}
     header.open .mobile-menu{display:block}
@@ -187,15 +191,13 @@
 <header id="siteHeader">
   <div class="wrap">
     <nav>
-      <div class="nav-links desktop-only">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso de Becas</a>
-      </div>
       <a class="logo-mark" href="#inicio" aria-label="Impact Global Agency">
         <img class="logo-img" src="assets/IMPACTTRANSPARENT-CLEAN.png" alt="Impact Global Agency Logo">
       </a>
       <div class="nav-links nav-actions desktop-only">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso de Becas</a>
         <a href="#casos">Casos de Exito</a>
         <a href="#nosotros">Sobre Nosotros</a>
         <a href="#contacto">Contacto</a>
@@ -230,9 +232,9 @@
         <a class="btn btn-outline" href="#servicios">Conocer Mas</a>
       </div>
       <div class="trust-bar" aria-label="Datos de confianza">
-        <div class="trust-item"><b>Atletas en EE. UU.</b><span>Procesos reales</span></div>
-        <div class="trust-item"><b>Conexiones directas</b><span>Universidades y entrenadores</span></div>
-        <div class="trust-item"><b>Genaro Fessia y Agustin Lopresti</b><span>Pumas #660 y #544</span></div>
+        <div class="trust-item"><b>Estudiar en EE. UU.</b><span>Opciones academicas</span></div>
+        <div class="trust-item"><b>Becas deportivas</b><span>Perfiles competitivos</span></div>
+        <div class="trust-item"><b>Acompanamiento 1:1</b><span>Proceso guiado</span></div>
       </div>
     </div>
   </section>
@@ -242,40 +244,40 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Servicios</div>
-          <h2>Oportunidades claras para perfiles con potencial.</h2>
+          <h2>Te ayudamos a encontrar tu mejor camino.</h2>
         </div>
-        <p>Trabajamos con deporte, educacion, becas y experiencias culturales sin atarnos a un solo camino.</p>
+        <p>Opciones simples para estudiar, competir o vivir una experiencia internacional.</p>
       </div>
       <div class="service-grid">
         <article class="service-card">
           <div class="service-icon cyan"><img src="assets/icon-oportunidades.png" alt=""></div>
-          <h3>Oportunidades Sin Fronteras</h3>
-          <p>Busqueda de universidades y programas alineados al perfil real.</p>
+          <h3>Estudiar afuera</h3>
+          <p>Universidades y programas que tengan sentido para tu perfil.</p>
         </article>
         <article class="service-card">
           <div class="service-icon purple"><img src="assets/icon-educacion.png" alt=""></div>
-          <h3>Educacion de Calidad</h3>
-          <p>Opciones academicas para estudiar y crecer en Estados Unidos.</p>
+          <h3>Opciones academicas</h3>
+          <p>Carreras, colleges y caminos educativos en Estados Unidos.</p>
         </article>
         <article class="service-card">
           <div class="service-icon gold"><img src="assets/icon-becas.png" alt=""></div>
-          <h3>Becas y Logros</h3>
-          <p>Evaluacion de becas deportivas, academicas, artisticas y culturales.</p>
+          <h3>Becas</h3>
+          <p>Evaluacion de oportunidades deportivas, academicas y culturales.</p>
         </article>
         <article class="service-card">
           <div class="service-icon pink"><img src="assets/icon-acompanamiento.png" alt=""></div>
-          <h3>Acompanamiento Personalizado</h3>
-          <p>Orden, seguimiento y decisiones claras para cada familia.</p>
+          <h3>Acompanamiento</h3>
+          <p>Un proceso guiado para que la familia sepa como avanzar.</p>
         </article>
         <article class="service-card">
           <div class="service-icon orange"><img src="assets/icon-camino.png" alt=""></div>
-          <h3>Tu Camino, Tu Futuro</h3>
-          <p>Plan de accion segun edad, ingles, carrera, deporte y budget.</p>
+          <h3>Plan personal</h3>
+          <p>Edad, ingles, deporte, carrera y presupuesto puestos en orden.</p>
         </article>
         <article class="service-card">
           <div class="service-icon cyan"><img src="assets/icon-talento.png" alt=""></div>
-          <h3>Impulsamos Tu Talento</h3>
-          <p>Perfil, video, comunicacion y postulaciones mejor presentadas.</p>
+          <h3>Perfil mejor armado</h3>
+          <p>Video, informacion y comunicacion listos para universidades.</p>
         </article>
       </div>
     </div>
@@ -285,14 +287,14 @@
     <div class="wrap">
       <div class="value-card">
         <div>
-          <div class="eyebrow">Valor</div>
-          <h2>Argentina and LATAM Offer a Strong Pool of Experienced Rugby & Academic Talent</h2>
+          <div class="eyebrow">Para quien es</div>
+          <h2>Para familias y chicos que quieren estudiar, competir o vivir una experiencia en Estados Unidos.</h2>
         </div>
         <div class="checks">
-          <div class="check"><b>&#10003;</b><span>Jugadores competitivos con cultura de club y compromiso.</span></div>
-          <div class="check"><b>&#10003;</b><span>Familias que buscan una decision educativa seria.</span></div>
-          <div class="check"><b>&#10003;</b><span>Referentes con experiencia real dentro del sistema universitario.</span></div>
-          <div class="check"><b>&#10003;</b><span>Perfiles deportivos y academicos presentados con informacion clara.</span></div>
+          <div class="check"><b>&#10003;</b><span>Chicos con ganas de estudiar en el exterior.</span></div>
+          <div class="check"><b>&#10003;</b><span>Deportistas que quieren explorar becas universitarias.</span></div>
+          <div class="check"><b>&#10003;</b><span>Familias que necesitan informacion clara antes de decidir.</span></div>
+          <div class="check"><b>&#10003;</b><span>Perfiles academicos, deportivos o culturales con potencial.</span></div>
         </div>
       </div>
     </div>
@@ -319,7 +321,7 @@
     <div class="wrap cta-row">
       <div>
         <h2>Listo para dar el salto a una universidad en EE. UU.?</h2>
-        <p>Completa la evaluacion y mandanos el resumen por WhatsApp.</p>
+        <p>El primer paso es entender tu caso y ver que opciones reales existen.</p>
       </div>
       <a class="btn btn-primary" href="#evaluacion">Agendar Llamada</a>
     </div>
@@ -330,14 +332,14 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Casos de Exito</div>
-          <h2>Referentes para construir confianza.</h2>
+          <h2>Acompanamiento cercano y recomendado.</h2>
         </div>
-        <p>Este espacio queda listo para sumar testimonios, entrevistas y resultados reales.</p>
+        <p>Trabajamos con referentes que conocen el deporte, la educacion y el sistema universitario desde adentro.</p>
       </div>
       <div class="people-grid">
-        <article class="person"><span>Rugby</span><h3>Genaro Fessia</h3><p>Puma #660 y referente deportivo para evaluar talento, nivel competitivo y oportunidades.</p></article>
-        <article class="person"><span>Rugby</span><h3>Agustin Lopresti</h3><p>Puma #544 y referente deportivo para evaluar talento, nivel competitivo y oportunidades.</p></article>
-        <article class="person"><span>Comunidad</span><h3>Familias y atletas</h3><p>Historias reales para mostrar procesos, aprendizajes y llegada al campus.</p></article>
+        <article class="person"><span>Rugby</span><h3>Genaro Fessia</h3><p>Puma #660, entrenador y referente para evaluar nivel deportivo y oportunidades.</p></article>
+        <article class="person"><span>Rugby</span><h3>Agustin Loprestti</h3><p>Puma #544, entrenador y referente dentro del sistema educativo de Estados Unidos.</p></article>
+        <article class="person"><span>Proceso</span><h3>Familias y atletas</h3><p>Acompanamiento guiado para tomar decisiones con informacion clara.</p></article>
       </div>
     </div>
   </section>
@@ -347,9 +349,14 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Sobre Nosotros</div>
-          <h2>Experiencia deportiva, mirada academica y proceso claro.</h2>
+          <h2>Quienes somos y que hacemos.</h2>
         </div>
-        <p>Impact combina scouting, red de contactos, administracion y soporte digital para que cada familia entienda sus opciones antes de avanzar.</p>
+        <p>Impact Global Agency acompana a estudiantes, deportistas y familias que quieren estudiar o competir en Estados Unidos. Ayudamos a ordenar el perfil, entender las opciones reales, contactar universidades y avanzar paso a paso con postulaciones, becas y tramites.</p>
+        <div class="about-points">
+          <div class="about-point">Genaro Fessia y Agustin Loprestti son entrenadores y ex Pumas, con experiencia real para evaluar talento y orientar el camino deportivo.</div>
+          <div class="about-point">El equipo conoce el sistema educativo de Estados Unidos y trabaja cerca de cada familia para evitar decisiones apuradas.</div>
+          <div class="about-point">La idea es simple: diagnostico claro, opciones reales y acompanamiento durante todo el proceso.</div>
+        </div>
       </div>
       <div class="brand-preview">
         <img src="assets/VARIACION.png" alt="Logo horizontal de Impact con lema de marca">
