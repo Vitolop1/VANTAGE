@@ -39,25 +39,28 @@
   .top-strip{position:sticky;top:0;z-index:50;background:#030914;color:#fff;border-bottom:1px solid rgba(255,193,7,.22);font-size:13px;font-weight:800}
   .top-strip .wrap{width:100%;min-height:36px;padding:0 32px;display:flex;align-items:center;justify-content:flex-end;gap:22px}
   .top-strip a{display:inline-flex;align-items:center;color:rgba(255,255,255,.88);transition:color .25s ease}
+  .top-strip a + a{border-left:1px solid rgba(255,255,255,.25);padding-left:22px}
   .top-strip a:hover{color:var(--gold)}
   header{position:sticky;top:36px;z-index:45;background:var(--navy);border-bottom:1px solid rgba(255,193,7,.28)}
   nav{height:104px;display:flex;align-items:center;justify-content:space-between;gap:28px}
   .logo-mark{display:inline-flex;align-items:center}
   .logo-img{display:block;width:300px;height:auto}
-  .nav-links{display:flex;align-items:center;gap:18px;color:rgba(255,255,255,.92);font-size:14px;font-weight:800}
-  .nav-links a{transition:color .25s ease}
-  .nav-links a:hover{color:var(--gold)}
+  .nav-links{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.92);font-size:13px;font-weight:800}
+  .nav-links a{min-width:92px;min-height:48px;padding:8px 12px;border:1px solid rgba(255,255,255,.18);border-radius:9px;display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1.15;background:rgba(255,255,255,.035);transition:color .25s ease,border-color .25s ease,background .25s ease,transform .25s ease}
+  .nav-links a:hover{color:var(--gold);border-color:rgba(255,193,7,.45);background:rgba(255,255,255,.07);transform:translateY(-1px)}
   .nav-actions{justify-content:flex-end}
   .mobile-toggle{display:none;width:48px;height:48px;border:1px solid rgba(255,255,255,.22);border-radius:8px;background:transparent;color:#fff;cursor:pointer}
   .mobile-toggle span{display:block;width:21px;height:2px;margin:5px auto;background:currentColor;border-radius:99px}
   .mobile-menu{display:none;border-top:1px solid rgba(255,255,255,.14);padding:12px 0 18px}
   .mobile-menu a{display:block;color:#fff;font-weight:800;padding:12px 0}
-  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:9px;border:1px solid transparent;font-size:13px;font-weight:800;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;min-width:128px;padding:12px 18px;border-radius:9px;border:1px solid transparent;font-size:13px;font-weight:800;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
   .btn:hover{transform:translateY(-1px)}
   .btn-primary{background:var(--magenta);color:#fff;box-shadow:0 14px 32px rgba(232,62,140,.28)}
   .btn-primary:hover{box-shadow:0 18px 42px rgba(232,62,140,.42)}
   .btn-whatsapp{background:var(--whatsapp);color:#fff;box-shadow:0 14px 32px rgba(37,211,102,.26)}
   .btn-whatsapp:hover{box-shadow:0 18px 42px rgba(37,211,102,.38)}
+  .nav-links a.btn-primary{min-width:132px;background:var(--magenta);border-color:transparent;color:#fff}
+  .nav-links a.btn-whatsapp{min-width:118px;background:var(--whatsapp);border-color:transparent;color:#fff}
   .btn-outline{background:transparent;color:#fff;border-color:rgba(0,180,216,.72)}
   .btn-dark{background:var(--navy);color:#fff}
   .btn-light{background:#fff;color:var(--navy);border-color:var(--line)}
@@ -182,6 +185,7 @@
     section{padding:56px 0;scroll-margin-top:126px}
     .grid,.choices{grid-template-columns:1fr}
     .top-strip .wrap{padding:0 14px;gap:16px;font-size:12px}
+    .top-strip a + a{padding-left:16px}
   }
 </style>
 </head>
