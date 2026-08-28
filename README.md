@@ -1,37 +1,23 @@
-# VANTAGE — sitio web
+# Impact Global Agency - sitio web
 
-Landing page base para VANTAGE (asesoramiento académico y deportivo, Argentina → Estados Unidos).
+Landing page para Impact Global Agency, agencia de becas deportivas, academicas y culturales para estudiar en Estados Unidos.
 
 ## Estructura
 
-- `index.html` — página única con todo el contenido (hero, cómo funciona, becas, nosotros, contacto). CSS embebido en el `<head>`, sin dependencias de build.
+- `index.html`: pagina unica con hero, servicios, proceso, referentes, formulario y contacto.
+- `assets/`: logos e iconos de marca.
+- `robots.txt` y `sitemap.xml`: archivos base para SEO.
 
-## Cómo iniciarlo
+## Como iniciarlo
 
-Abrí `index.html` directo en el navegador, o levantá el servidor local:
-
-```
+```bash
 npm start
 ```
 
-Si PowerShell bloquea `npm`, usá:
-
-```
-npm.cmd start
-```
-
-También podés correrlo directo con Node:
-
-```
-node server.js
-```
-
-Después entrá a `http://localhost:8000`.
+Despues entrar a `http://localhost:8000`.
 
 ## Pendientes
 
-- [ ] Reemplazar los links de WhatsApp (`#`) por el número real
-- [ ] Reemplazar los links de Instagram / YouTube por las cuentas reales
-- [ ] Sumar testimonios en video cuando haya el primer caso
-- [ ] Revisar copy — bajar el tono "genérico", sumar más voz propia
-- [ ] Definir si se pasa a un framework (Next.js, Astro) o se sigue en HTML plano
+- Definir correo corporativo `@impactglobalagency.com`.
+- Reemplazar links de redes sociales por cuentas reales.
+- Sumar testimonios en video cuando haya casos listos.
