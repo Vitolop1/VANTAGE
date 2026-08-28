@@ -95,6 +95,9 @@
   .service-card:hover{transform:translateY(-3px);box-shadow:0 24px 56px rgba(13,27,61,.11)}
   .service-icon{width:72px;height:62px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;background:#fff}
   .service-icon img{display:block;max-width:62px;max-height:54px;object-fit:contain}
+  .information{background:#fff}
+  .info-grid{margin-bottom:34px}
+  .requirements-title{margin:8px 0 20px;font-size:clamp(24px,3vw,34px);color:var(--navy)}
   .cyan{color:var(--cyan)} .purple{color:var(--purple)} .gold{color:var(--gold)} .pink{color:var(--magenta)} .orange{color:var(--orange)}
   .service-card h3{font-size:19px;color:var(--navy)}
   .service-card p{margin-top:8px;color:var(--muted);font-size:14px;font-weight:500}
@@ -111,7 +114,7 @@
   .step b{display:flex;width:38px;height:38px;align-items:center;justify-content:center;border-radius:10px;background:linear-gradient(135deg,var(--magenta),var(--orange));color:#fff;margin-bottom:14px}
   .step h3{font-size:19px;color:var(--navy)}
   .step p{margin-top:8px;color:var(--muted);font-size:14px;font-weight:500}
-  .requirements{background:var(--light)}
+  .requirements{background:#fff}
   .requirements-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
   .requirement{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:0 14px 36px rgba(13,27,61,.06)}
   .requirement span{display:inline-flex;margin-bottom:12px;color:var(--magenta);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
@@ -219,8 +222,8 @@
       <div class="nav-links nav-actions desktop-only">
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
+        <a href="#informacion">Informacion</a>
         <a href="#proceso">Proceso de Becas</a>
-        <a href="#casos">Casos de Exito</a>
         <a href="#nosotros">Sobre Nosotros</a>
         <a class="btn btn-primary" href="#evaluacion">Evaluacion Gratuita</a>
         <a class="btn btn-whatsapp" href="https://wa.me/17046762602?text=Hola%20Impact%20Global%20Agency%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a>
@@ -232,8 +235,8 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
+      <a href="#informacion">Informacion</a>
       <a href="#proceso">Proceso de Becas</a>
-      <a href="#casos">Casos de Exito</a>
       <a href="#nosotros">Sobre Nosotros</a>
       <a href="#contacto">Contacto</a>
       <a class="btn btn-primary" href="#evaluacion">Evaluacion Gratuita</a>
@@ -272,34 +275,19 @@
       </div>
       <div class="service-grid">
         <article class="service-card">
-          <div class="service-icon cyan"><img src="assets/icon-oportunidades.png" alt=""></div>
-          <h3>Estudiar afuera</h3>
-          <p>Universidades y programas en Estados Unidos y otros paises.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon purple"><img src="assets/icon-educacion.png" alt=""></div>
-          <h3>Opciones academicas</h3>
-          <p>Carreras, colleges y caminos educativos en Estados Unidos.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon gold"><img src="assets/icon-becas.png" alt=""></div>
-          <h3>Becas</h3>
-          <p>Evaluacion de oportunidades deportivas, academicas y culturales.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon pink"><img src="assets/icon-acompanamiento.png" alt=""></div>
-          <h3>Acompanamiento</h3>
-          <p>Un proceso guiado para que la familia sepa como avanzar.</p>
+          <div class="service-icon cyan"><img src="assets/icon-talento.png" alt=""></div>
+          <h3>Evaluacion y perfil</h3>
+          <p>Analizamos edad, objetivos, nivel academico, ingles, deporte o area cultural y material disponible.</p>
         </article>
         <article class="service-card">
           <div class="service-icon orange"><img src="assets/icon-camino.png" alt=""></div>
           <h3>Plan personal</h3>
-          <p>Edad, ingles, deporte, carrera y presupuesto puestos en orden.</p>
+          <p>Disenamos un camino concreto segun carrera, presupuesto, tiempos, paises posibles y tipo de oportunidad.</p>
         </article>
         <article class="service-card">
-          <div class="service-icon cyan"><img src="assets/icon-talento.png" alt=""></div>
-          <h3>Perfil mejor armado</h3>
-          <p>Video, informacion y comunicacion listos para universidades.</p>
+          <div class="service-icon pink"><img src="assets/icon-acompanamiento.png" alt=""></div>
+          <h3>Guia y acompanamiento</h3>
+          <p>Acompanamos postulaciones, contacto con programas, documentacion, decisiones familiares y llegada al destino.</p>
         </article>
       </div>
     </div>
@@ -339,15 +327,33 @@
     </div>
   </section>
 
-  <section class="requirements" id="requisitos">
+  <section class="information" id="informacion">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Requisitos</div>
-          <h2>Que miramos antes de avanzar.</h2>
+          <div class="eyebrow">Informacion</div>
+          <h2>Oportunidades y requisitos para estudiar afuera.</h2>
         </div>
-        <p>La evaluacion inicial ordena la informacion clave para saber que camino tiene sentido y que hay que mejorar.</p>
+        <p>Antes de avanzar, ordenamos las alternativas posibles y los requisitos que condicionan cada camino.</p>
       </div>
+      <div class="service-grid info-grid">
+        <article class="service-card">
+          <div class="service-icon cyan"><img src="assets/icon-oportunidades.png" alt=""></div>
+          <h3>Estudiar afuera</h3>
+          <p>Universidades, colleges y experiencias internacionales en Estados Unidos y otros paises.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon purple"><img src="assets/icon-educacion.png" alt=""></div>
+          <h3>Opciones academicas</h3>
+          <p>Carreras, programas y caminos educativos segun intereses, nivel y objetivos del estudiante.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon gold"><img src="assets/icon-becas.png" alt=""></div>
+          <h3>Becas y oportunidades</h3>
+          <p>Evaluacion de alternativas deportivas, academicas, artisticas y culturales.</p>
+        </article>
+      </div>
+      <h3 class="requirements-title">Requisitos que revisamos</h3>
       <div class="requirements-grid">
         <article class="requirement"><span>Academico</span><h3>Notas y egreso</h3><p>Promedio, materias, ano de egreso y carrera o area de interes.</p></article>
         <article class="requirement"><span>Idioma</span><h3>Nivel de ingles</h3><p>Base real de ingles y posibilidad de preparar examenes si el proceso lo requiere.</p></article>
@@ -469,7 +475,9 @@
     </a>
     <div class="foot-links">
       <a href="#servicios">Servicios</a>
+      <a href="#informacion">Informacion</a>
       <a href="#proceso">Proceso</a>
+      <a href="#casos">Casos de Exito</a>
       <a href="#evaluacion">Evaluacion Gratuita</a>
       <a href="#">Instagram</a>
       <a href="#">LinkedIn</a>
