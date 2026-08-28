@@ -43,8 +43,10 @@
   .top-strip a:hover{color:var(--gold)}
   header{position:sticky;top:36px;z-index:45;background:#fff;border-bottom:1px solid rgba(13,27,61,.12);box-shadow:0 12px 32px rgba(7,18,40,.08)}
   nav{height:104px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-  .logo-mark{display:inline-flex;align-items:center;background:var(--navy);border-radius:10px;padding:12px 18px;box-shadow:0 12px 28px rgba(13,27,61,.16)}
+  .logo-mark{display:inline-flex;align-items:center}
   .logo-img{display:block;width:255px;height:auto}
+  header .logo-mark{width:350px;height:76px;overflow:hidden}
+  header .logo-img{width:350px;max-width:none;transform:translateY(-29px)}
   .nav-links{display:flex;align-items:center;gap:10px;color:var(--navy);font-size:13px;font-weight:800}
   .nav-links a{min-width:92px;min-height:48px;padding:8px 12px;border:1px solid rgba(13,27,61,.18);border-radius:9px;display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1.15;background:#fff;transition:color .25s ease,border-color .25s ease,background .25s ease,transform .25s ease,box-shadow .25s ease}
   .nav-links a:hover{color:var(--magenta);border-color:rgba(232,62,140,.45);background:#fff7fb;box-shadow:0 10px 24px rgba(13,27,61,.08);transform:translateY(-1px)}
@@ -181,6 +183,8 @@
     .wrap{width:min(100% - 28px,1160px)}
     nav{height:82px}
     .logo-img{width:205px}
+    header .logo-mark{width:248px;height:58px}
+    header .logo-img{width:248px;transform:translateY(-21px)}
     .hero{min-height:calc(100svh - 118px);padding:46px 0 58px}
     .hero-brand{padding:4px 0;width:100%}
     .hero-brand img{width:min(300px,82vw)}
@@ -203,7 +207,7 @@
   <div class="wrap">
     <nav>
       <a class="logo-mark" href="#inicio" aria-label="Impact Global Agency">
-        <img class="logo-img" src="assets/IMPACTTRANSPARENT-CLEAN.png" alt="Impact Global Agency Logo">
+        <img class="logo-img" src="assets/LOGO%20HORIZONTAL%20ALTERNATIVO%20BLANCO.jpg" alt="Impact Global Agency Logo">
       </a>
       <div class="nav-links nav-actions desktop-only">
         <a href="#inicio">Inicio</a>
