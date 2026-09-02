@@ -41,6 +41,9 @@
   .top-strip a{display:inline-flex;align-items:center;color:rgba(255,255,255,.88);transition:color .25s ease}
   .top-strip a + a{border-left:1px solid rgba(255,255,255,.25);padding-left:22px}
   .top-strip a:hover{color:var(--gold)}
+  .lang-switch{margin-right:auto;display:flex;align-items:center;gap:6px}
+  .lang-switch button{width:38px;height:24px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:transparent;color:#fff;font-size:11px;font-weight:900;cursor:pointer}
+  .lang-switch button.active{background:#fff;color:var(--navy)}
   header{position:sticky;top:36px;z-index:45;background:#fff;border-bottom:3px solid var(--navy);box-shadow:0 12px 32px rgba(7,18,40,.08)}
   nav{height:104px;display:flex;align-items:center;justify-content:space-between;gap:28px}
   .logo-mark{display:inline-flex;align-items:center}
@@ -140,6 +143,23 @@
   .about-point{border-left:4px solid var(--cyan);padding:10px 0 10px 14px;color:var(--muted);font-weight:600}
   .brand-preview{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:0 18px 50px rgba(13,27,61,.08)}
   .brand-preview img{display:block;width:100%;height:auto;border-radius:8px}
+  .portal{background:var(--light)}
+  .portal-shell{display:grid;grid-template-columns:360px minmax(0,1fr);gap:24px;align-items:start}
+  .portal-panel,.profile-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 18px 44px rgba(13,27,61,.07)}
+  .role-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}
+  .role-tab{min-height:44px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);font-weight:900;cursor:pointer}
+  .role-tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
+  .portal-login{display:grid;gap:10px}
+  .portal-login input{min-height:46px}
+  .portal-note{margin-top:12px;color:var(--muted);font-size:13px;font-weight:600}
+  .profile-head{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:18px}
+  .profile-head h3{font-size:26px;color:var(--navy)}
+  .profile-badge{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(232,62,140,.1);color:var(--magenta);font-size:12px;font-weight:900;padding:8px 12px}
+  .profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .profile-field{border:1px solid var(--line);border-radius:10px;padding:14px;background:#fbfdff}
+  .profile-field span{display:block;color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase}
+  .profile-field b{display:block;margin-top:4px;color:var(--navy)}
+  .profile-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 
   .form-section{background:#fff}
   .form-layout{display:grid;grid-template-columns:340px minmax(0,1fr);gap:28px;align-items:start}
@@ -184,7 +204,8 @@
     .mobile-toggle{display:inline-block;justify-self:end}
     header.open .mobile-menu{display:block}
     .service-grid,.steps,.people-grid,.requirements-grid{grid-template-columns:1fr}
-    .value-card,.form-layout,.about-layout{grid-template-columns:1fr}
+    .value-card,.form-layout,.about-layout,.portal-shell{grid-template-columns:1fr}
+    .profile-grid{grid-template-columns:1fr}
     .form-note{position:static}
     .section-head,.cta-row,.contact-row{display:grid}
     .trust-bar{grid-template-columns:1fr}
@@ -202,12 +223,19 @@
     .grid,.choices{grid-template-columns:1fr}
     .top-strip .wrap{padding:0 14px;gap:16px;font-size:12px}
     .top-strip a + a{padding-left:16px}
+    .lang-switch button{width:34px}
   }
 </style>
 </head>
 <body>
 <div class="top-strip">
   <div class="wrap">
+    <div class="lang-switch" aria-label="Cambiar idioma">
+      <button class="active" type="button" data-lang="es">ES</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="fr">FR</button>
+      <button type="button" data-lang="it">IT</button>
+    </div>
     <a href="#" aria-label="Instagram de Impact Global Agency">Instagram</a>
     <a href="https://wa.me/17046762602?text=Hola%20Impact%20Global%20Agency%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a>
   </div>
@@ -224,7 +252,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#informacion">Información</a>
         <a href="#proceso">Proceso de Becas</a>
-        <a href="#nosotros">Sobre Nosotros</a>
+        <a href="#portal">Portal Demo</a>
         <a class="btn btn-primary" href="#evaluacion">Evaluación Gratuita</a>
         <a class="btn btn-whatsapp" href="https://wa.me/17046762602?text=Hola%20Impact%20Global%20Agency%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a>
       </div>
@@ -237,6 +265,7 @@
       <a href="#servicios">Servicios</a>
       <a href="#informacion">Información</a>
       <a href="#proceso">Proceso de Becas</a>
+      <a href="#portal">Portal Demo</a>
       <a href="#nosotros">Sobre Nosotros</a>
       <a href="#contacto">Contacto</a>
       <a class="btn btn-primary" href="#evaluacion">Evaluación Gratuita</a>
@@ -410,6 +439,55 @@
     </div>
   </section>
 
+  <section class="portal" id="portal">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow" data-i18n="portalEyebrow">Portal Demo</div>
+          <h2 data-i18n="portalTitle">Una plataforma para jugadores, entrenadores y administradores.</h2>
+        </div>
+        <p data-i18n="portalIntro">La idea es que cada jugador pueda cargar su perfil una sola vez, compartirlo con universidades y actualizar su información durante el proceso.</p>
+      </div>
+      <div class="portal-shell">
+        <div class="portal-panel">
+          <div class="eyebrow" data-i18n="accessTitle">Acceso por rol</div>
+          <div class="role-tabs" aria-label="Elegir tipo de usuario">
+            <button class="role-tab active" type="button" data-role="player" data-i18n="rolePlayer">Jugador</button>
+            <button class="role-tab" type="button" data-role="coach" data-i18n="roleCoach">Entrenador</button>
+            <button class="role-tab" type="button" data-role="admin" data-i18n="roleAdmin">Admin</button>
+          </div>
+          <div class="portal-login">
+            <input id="portalEmail" type="email" placeholder="Email">
+            <input id="portalPassword" type="password" placeholder="Contraseña">
+            <button class="btn btn-primary" type="button" id="portalLogin" data-i18n="loginButton">Entrar al portal</button>
+          </div>
+          <p class="portal-note" id="roleDescription">Demo jugador: cargar datos, video, notas, deporte, logros y link público del perfil.</p>
+        </div>
+        <div class="profile-card">
+          <div class="profile-head">
+            <div>
+              <span class="profile-badge" data-i18n="profileBadge">Perfil público demo</span>
+              <h3>Lucas Martínez</h3>
+            </div>
+            <a class="btn btn-whatsapp" href="#evaluacion" data-i18n="profileCta">Solicitar evaluación</a>
+          </div>
+          <div class="profile-grid">
+            <div class="profile-field"><span data-i18n="profileSport">Deporte</span><b>Rugby | Centro</b></div>
+            <div class="profile-field"><span data-i18n="profileGrad">Egreso</span><b>2027</b></div>
+            <div class="profile-field"><span data-i18n="profileEnglish">Inglés</span><b>Intermedio</b></div>
+            <div class="profile-field"><span data-i18n="profileGpa">Académico</span><b>Promedio 8.4/10</b></div>
+            <div class="profile-field"><span data-i18n="profileBudget">Budget anual</span><b>USD 20.000 - 30.000</b></div>
+            <div class="profile-field"><span data-i18n="profileUrl">Página del jugador</span><b>lucas-martinez.impactglobalagency.com</b></div>
+          </div>
+          <div class="profile-actions">
+            <button class="btn btn-dark" type="button" data-i18n="updateProfile">Actualizar perfil</button>
+            <button class="btn btn-light" type="button" data-i18n="shareProfile">Compartir con universidades</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="form-section" id="evaluacion">
     <div class="wrap form-layout">
       <aside class="form-note">
@@ -477,6 +555,7 @@
       <a href="#servicios">Servicios</a>
       <a href="#informacion">Información</a>
       <a href="#proceso">Proceso</a>
+      <a href="#portal">Portal Demo</a>
       <a href="#casos">Casos de Éxito</a>
       <a href="#evaluacion">Evaluación Gratuita</a>
       <a href="#">Instagram</a>
@@ -495,6 +574,127 @@
   const summary = document.querySelector("#summary");
   const progressBar = document.querySelector("#progressBar");
   const progressText = document.querySelector("#progressText");
+  const langButtons = document.querySelectorAll("[data-lang]");
+  const translatable = document.querySelectorAll("[data-i18n]");
+  const roleTabs = document.querySelectorAll("[data-role]");
+  const roleDescription = document.querySelector("#roleDescription");
+  const portalLogin = document.querySelector("#portalLogin");
+
+  const translations = {
+    es: {
+      portalEyebrow: "Portal Demo",
+      portalTitle: "Una plataforma para jugadores, entrenadores y administradores.",
+      portalIntro: "La idea es que cada jugador pueda cargar su perfil una sola vez, compartirlo con universidades y actualizar su información durante el proceso.",
+      accessTitle: "Acceso por rol",
+      rolePlayer: "Jugador",
+      roleCoach: "Entrenador",
+      roleAdmin: "Admin",
+      loginButton: "Entrar al portal",
+      profileBadge: "Perfil público demo",
+      profileCta: "Solicitar evaluación",
+      profileSport: "Deporte",
+      profileGrad: "Egreso",
+      profileEnglish: "Inglés",
+      profileGpa: "Académico",
+      profileBudget: "Budget anual",
+      profileUrl: "Página del jugador",
+      updateProfile: "Actualizar perfil",
+      shareProfile: "Compartir con universidades"
+    },
+    en: {
+      portalEyebrow: "Portal Demo",
+      portalTitle: "A platform for players, coaches and administrators.",
+      portalIntro: "Each player can create one profile, share it with universities and keep it updated throughout the process.",
+      accessTitle: "Role access",
+      rolePlayer: "Player",
+      roleCoach: "Coach",
+      roleAdmin: "Admin",
+      loginButton: "Enter portal",
+      profileBadge: "Public demo profile",
+      profileCta: "Request evaluation",
+      profileSport: "Sport",
+      profileGrad: "Graduation",
+      profileEnglish: "English",
+      profileGpa: "Academic",
+      profileBudget: "Annual budget",
+      profileUrl: "Player page",
+      updateProfile: "Update profile",
+      shareProfile: "Share with universities"
+    },
+    fr: {
+      portalEyebrow: "Démo portail",
+      portalTitle: "Une plateforme pour joueurs, entraîneurs et administrateurs.",
+      portalIntro: "Chaque joueur peut créer un seul profil, le partager avec les universités et le mettre à jour pendant le processus.",
+      accessTitle: "Accès par rôle",
+      rolePlayer: "Joueur",
+      roleCoach: "Entraîneur",
+      roleAdmin: "Admin",
+      loginButton: "Entrer au portail",
+      profileBadge: "Profil public démo",
+      profileCta: "Demander une évaluation",
+      profileSport: "Sport",
+      profileGrad: "Promotion",
+      profileEnglish: "Anglais",
+      profileGpa: "Académique",
+      profileBudget: "Budget annuel",
+      profileUrl: "Page du joueur",
+      updateProfile: "Mettre à jour",
+      shareProfile: "Partager avec les universités"
+    },
+    it: {
+      portalEyebrow: "Demo portale",
+      portalTitle: "Una piattaforma per giocatori, allenatori e amministratori.",
+      portalIntro: "Ogni giocatore può creare un solo profilo, condividerlo con le università e aggiornarlo durante il percorso.",
+      accessTitle: "Accesso per ruolo",
+      rolePlayer: "Giocatore",
+      roleCoach: "Allenatore",
+      roleAdmin: "Admin",
+      loginButton: "Entra nel portale",
+      profileBadge: "Profilo pubblico demo",
+      profileCta: "Richiedi valutazione",
+      profileSport: "Sport",
+      profileGrad: "Diploma",
+      profileEnglish: "Inglese",
+      profileGpa: "Accademico",
+      profileBudget: "Budget annuale",
+      profileUrl: "Pagina giocatore",
+      updateProfile: "Aggiorna profilo",
+      shareProfile: "Condividi con università"
+    }
+  };
+
+  const roleCopy = {
+    es: {
+      player: "Demo jugador: cargar datos, video, notas, deporte, logros y link público del perfil.",
+      coach: "Demo entrenador: buscar perfiles, filtrar por deporte, revisar videos y guardar candidatos.",
+      admin: "Demo administrador: aprobar perfiles, asignar responsables, ver leads y controlar el estado de cada proceso."
+    },
+    en: {
+      player: "Player demo: upload data, video, grades, sport, achievements and a public profile link.",
+      coach: "Coach demo: search profiles, filter by sport, review videos and save candidates.",
+      admin: "Admin demo: approve profiles, assign owners, view leads and track each process."
+    },
+    fr: {
+      player: "Démo joueur : ajouter données, vidéo, notes, sport, résultats et lien public du profil.",
+      coach: "Démo entraîneur : rechercher des profils, filtrer par sport, voir les vidéos et garder des candidats.",
+      admin: "Démo admin : approuver les profils, assigner les responsables, voir les leads et suivre chaque processus."
+    },
+    it: {
+      player: "Demo giocatore: caricare dati, video, voti, sport, risultati e link pubblico del profilo.",
+      coach: "Demo allenatore: cercare profili, filtrare per sport, vedere video e salvare candidati.",
+      admin: "Demo admin: approvare profili, assegnare responsabili, vedere lead e seguire ogni processo."
+    }
+  };
+
+  const loginSuffix = {
+    es: "Demo visual: el acceso real se conectaría a una base de datos y permisos por usuario.",
+    en: "Visual demo: real access would connect to a database and user permissions.",
+    fr: "Démo visuelle : l'accès réel serait connecté à une base de données et à des permissions utilisateur.",
+    it: "Demo visuale: l'accesso reale sarebbe collegato a un database e ai permessi utente."
+  };
+
+  let currentLang = "es";
+  let currentRole = "player";
 
   menuToggle.addEventListener("click", () => {
     const open = header.classList.toggle("open");
@@ -507,6 +707,35 @@
       menuToggle.setAttribute("aria-expanded", "false");
     });
   });
+
+  function applyLanguage(lang){
+    currentLang = translations[lang] ? lang : "es";
+    document.documentElement.lang = currentLang;
+    translatable.forEach(element => {
+      const key = element.dataset.i18n;
+      if(translations[currentLang][key]) element.textContent = translations[currentLang][key];
+    });
+    langButtons.forEach(button => button.classList.toggle("active", button.dataset.lang === currentLang));
+    if(roleDescription) roleDescription.textContent = roleCopy[currentLang][currentRole];
+  }
+
+  roleTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      currentRole = tab.dataset.role;
+      roleTabs.forEach(button => button.classList.toggle("active", button === tab));
+      roleDescription.textContent = roleCopy[currentLang][currentRole];
+    });
+  });
+
+  langButtons.forEach(button => {
+    button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+  });
+
+  if(portalLogin){
+    portalLogin.addEventListener("click", () => {
+      roleDescription.textContent = `${roleCopy[currentLang][currentRole]} ${loginSuffix[currentLang]}`;
+    });
+  }
 
   function escapeHtml(value){
     return String(value || "")
