@@ -40,6 +40,10 @@
       "dest": "/portal.html"
     },
     {
+      "src": "/portal.html",
+      "dest": "/portal.html"
+    },
+    {
       "src": "/",
       "dest": "/index.html"
     }
