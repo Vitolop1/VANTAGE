@@ -29,8 +29,11 @@ const server = http.createServer((req, res) => {
   }
 
   if (!path.extname(filePath)) {
+    const indexPath = path.join(filePath, "index.html");
     const htmlPath = `${filePath}.html`;
-    if (fs.existsSync(htmlPath)) {
+    if (fs.existsSync(indexPath)) {
+      filePath = indexPath;
+    } else if (fs.existsSync(htmlPath)) {
       filePath = htmlPath;
     }
   }
