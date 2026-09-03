@@ -190,6 +190,14 @@
   .summary{display:none;margin-top:18px;background:var(--light);border:1px solid var(--line);border-radius:12px;padding:18px}
   .summary h3{font-size:18px;color:var(--navy)}
   .summary p{margin-top:8px;color:var(--muted);font-size:14px}
+  .faq{background:var(--light)}
+  .faq-list{display:grid;gap:12px;max-width:920px;margin:0 auto}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 36px rgba(13,27,61,.06);overflow:hidden}
+  .faq-item summary{min-height:64px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;color:var(--navy);font-size:16px;font-weight:900;cursor:pointer;list-style:none}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";display:flex;width:28px;height:28px;align-items:center;justify-content:center;border-radius:50%;background:rgba(0,180,216,.12);color:var(--cyan);font-size:20px;line-height:1;flex:0 0 auto}
+  .faq-item[open] summary::after{content:"-";background:rgba(232,62,140,.12);color:var(--magenta)}
+  .faq-item p{padding:0 22px 20px;color:var(--muted);font-size:15px;font-weight:600}
 
   .contact{background:var(--navy);color:#fff}
   .contact-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -483,6 +491,48 @@
     </div>
   </section>
 
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow" data-i18n="faqEyebrow">Preguntas frecuentes</div>
+          <h2 data-i18n="faqTitle">Dudas comunes antes de empezar.</h2>
+        </div>
+        <p data-i18n="faqIntro">Respuestas claras para entender el proceso sin promesas irreales.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary data-i18n="faq1Question">¿Qué incluye el acompañamiento de Impact?</summary>
+          <p data-i18n="faq1Answer">Incluye evaluación inicial, armado del perfil, análisis de opciones, orientación para postulaciones y seguimiento durante las etapas principales del proceso.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq2Question">¿Impact garantiza una beca, admisión o visa?</summary>
+          <p data-i18n="faq2Answer">No. Las decisiones finales dependen de universidades, entrenadores, organismos oficiales y consulados. Nuestro trabajo es preparar el caso, ordenar la estrategia y acompañar con información realista.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq3Question">¿Con cuánto tiempo conviene empezar?</summary>
+          <p data-i18n="faq3Answer">Lo ideal es empezar con 12 a 18 meses de anticipación. Si el estudiante está más cerca de egresar, igual se puede evaluar el caso y ver qué opciones siguen abiertas.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq4Question">¿Qué tipos de becas se pueden explorar?</summary>
+          <p data-i18n="faq4Answer">Se pueden analizar oportunidades deportivas, académicas, artísticas o culturales, según el perfil del estudiante, su nivel, objetivos, documentación y presupuesto familiar.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq5Question">¿Ayudan a elegir universidad, carrera y ciudad?</summary>
+          <p data-i18n="faq5Answer">Sí. Comparamos alternativas según perfil académico, deporte o área, nivel de inglés, carrera de interés, presupuesto y estilo de experiencia que busca la familia.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq6Question">¿Qué información necesitamos para la primera evaluación?</summary>
+          <p data-i18n="faq6Answer">Edad, año de egreso, nivel de inglés, promedio o situación académica, deporte o área de interés, objetivos, budget anual y cualquier video, referencia o material disponible.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq7Question">¿Acompañan con trámites como visa, housing y llegada?</summary>
+          <p data-i18n="faq7Answer">Acompañamos la organización del proceso y la preparación de documentación. Cada trámite queda sujeto a los requisitos de la universidad, autoridades migratorias y organismos correspondientes.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="contacto">
     <div class="wrap contact-row">
       <div>
@@ -510,6 +560,7 @@
       <a href="#servicios" data-i18n="navServices">Servicios</a>
       <a href="#informacion" data-i18n="navInfo">Información</a>
       <a href="#proceso" data-i18n="footerProcess">Proceso</a>
+      <a href="#faq" data-i18n="faqEyebrow">Preguntas frecuentes</a>
       <a href="/portal" data-i18n="navPortal">Portal</a>
       <a href="#casos" data-i18n="navCases">Casos de Éxito</a>
       <a href="#evaluacion" data-i18n="navEvaluation">Evaluación Gratuita</a>
@@ -621,6 +672,23 @@
       formEyebrow: "Formulario",
       formTitle: "Evaluación inicial",
       formIntro: "Estas respuestas nos ayudan a entender qué busca la familia y preparar una primera charla concreta.",
+      faqEyebrow: "Preguntas frecuentes",
+      faqTitle: "Dudas comunes antes de empezar.",
+      faqIntro: "Respuestas claras para entender el proceso sin promesas irreales.",
+      faq1Question: "¿Qué incluye el acompañamiento de Impact?",
+      faq1Answer: "Incluye evaluación inicial, armado del perfil, análisis de opciones, orientación para postulaciones y seguimiento durante las etapas principales del proceso.",
+      faq2Question: "¿Impact garantiza una beca, admisión o visa?",
+      faq2Answer: "No. Las decisiones finales dependen de universidades, entrenadores, organismos oficiales y consulados. Nuestro trabajo es preparar el caso, ordenar la estrategia y acompañar con información realista.",
+      faq3Question: "¿Con cuánto tiempo conviene empezar?",
+      faq3Answer: "Lo ideal es empezar con 12 a 18 meses de anticipación. Si el estudiante está más cerca de egresar, igual se puede evaluar el caso y ver qué opciones siguen abiertas.",
+      faq4Question: "¿Qué tipos de becas se pueden explorar?",
+      faq4Answer: "Se pueden analizar oportunidades deportivas, académicas, artísticas o culturales, según el perfil del estudiante, su nivel, objetivos, documentación y presupuesto familiar.",
+      faq5Question: "¿Ayudan a elegir universidad, carrera y ciudad?",
+      faq5Answer: "Sí. Comparamos alternativas según perfil académico, deporte o área, nivel de inglés, carrera de interés, presupuesto y estilo de experiencia que busca la familia.",
+      faq6Question: "¿Qué información necesitamos para la primera evaluación?",
+      faq6Answer: "Edad, año de egreso, nivel de inglés, promedio o situación académica, deporte o área de interés, objetivos, budget anual y cualquier video, referencia o material disponible.",
+      faq7Question: "¿Acompañan con trámites como visa, housing y llegada?",
+      faq7Answer: "Acompañamos la organización del proceso y la preparación de documentación. Cada trámite queda sujeto a los requisitos de la universidad, autoridades migratorias y organismos correspondientes.",
       contactEyebrow: "Contacto",
       contactTitle: "Empecemos a construir tu camino. Contactanos.",
       contactText: "Completa la evaluación y enviá el resumen por WhatsApp para coordinar la primera reunión.",
@@ -714,6 +782,23 @@
       formEyebrow: "Form",
       formTitle: "Initial evaluation",
       formIntro: "These answers help us understand what the family is looking for and prepare a concrete first conversation.",
+      faqEyebrow: "FAQ",
+      faqTitle: "Common questions before getting started.",
+      faqIntro: "Clear answers to understand the process without unrealistic promises.",
+      faq1Question: "What does Impact support include?",
+      faq1Answer: "It includes the initial evaluation, profile preparation, analysis of options, application guidance and follow-up throughout the main stages of the process.",
+      faq2Question: "Does Impact guarantee a scholarship, admission or visa?",
+      faq2Answer: "No. Final decisions depend on universities, coaches, official organizations and consulates. Our role is to prepare the case, organize the strategy and guide the family with realistic information.",
+      faq3Question: "How early should we start?",
+      faq3Answer: "Ideally, 12 to 18 months in advance. If the student is closer to graduation, we can still evaluate the case and see which options remain open.",
+      faq4Question: "What types of scholarships can be explored?",
+      faq4Answer: "We can analyze athletic, academic, artistic or cultural opportunities depending on the student's profile, level, goals, documentation and family budget.",
+      faq5Question: "Do you help choose a university, major and city?",
+      faq5Answer: "Yes. We compare alternatives based on academic profile, sport or area, English level, desired major, budget and the kind of experience the family is looking for.",
+      faq6Question: "What information is needed for the first evaluation?",
+      faq6Answer: "Age, graduation year, English level, grades or academic status, sport or area of interest, goals, annual budget and any available video, reference or material.",
+      faq7Question: "Do you help with visa, housing and arrival steps?",
+      faq7Answer: "We help organize the process and prepare documentation. Each step remains subject to the requirements of the university, immigration authorities and relevant organizations.",
       contactEyebrow: "Contact",
       contactTitle: "Let's start building your path. Contact us.",
       contactText: "Complete the evaluation and send the summary by WhatsApp to schedule the first meeting.",
@@ -807,6 +892,23 @@
       formEyebrow: "Formulaire",
       formTitle: "Évaluation initiale",
       formIntro: "Ces réponses nous aident à comprendre ce que la famille recherche et à préparer un premier échange concret.",
+      faqEyebrow: "Questions fréquentes",
+      faqTitle: "Questions courantes avant de commencer.",
+      faqIntro: "Des réponses claires pour comprendre le processus sans promesses irréalistes.",
+      faq1Question: "Que comprend l'accompagnement d'Impact ?",
+      faq1Answer: "Il comprend l'évaluation initiale, la préparation du profil, l'analyse des options, l'orientation pour les candidatures et le suivi des principales étapes du processus.",
+      faq2Question: "Impact garantit-il une bourse, une admission ou un visa ?",
+      faq2Answer: "Non. Les décisions finales dépendent des universités, des entraîneurs, des organismes officiels et des consulats. Notre rôle est de préparer le dossier, organiser la stratégie et accompagner avec des informations réalistes.",
+      faq3Question: "Combien de temps à l'avance faut-il commencer ?",
+      faq3Answer: "L'idéal est de commencer 12 à 18 mois à l'avance. Si l'étudiant est plus proche de la fin des études, nous pouvons quand même évaluer le dossier et voir quelles options restent ouvertes.",
+      faq4Question: "Quels types de bourses peut-on explorer ?",
+      faq4Answer: "Nous pouvons analyser des opportunités sportives, académiques, artistiques ou culturelles selon le profil, le niveau, les objectifs, les documents et le budget familial.",
+      faq5Question: "Aidez-vous à choisir l'université, le cursus et la ville ?",
+      faq5Answer: "Oui. Nous comparons les alternatives selon le profil académique, le sport ou domaine, le niveau d'anglais, le cursus souhaité, le budget et le type d'expérience recherché par la famille.",
+      faq6Question: "Quelles informations faut-il pour la première évaluation ?",
+      faq6Answer: "Âge, année de fin d'études, niveau d'anglais, notes ou situation académique, sport ou domaine d'intérêt, objectifs, budget annuel et toute vidéo, référence ou matériel disponible.",
+      faq7Question: "Accompagnez-vous les démarches de visa, logement et arrivée ?",
+      faq7Answer: "Nous aidons à organiser le processus et à préparer la documentation. Chaque démarche dépend des exigences de l'université, des autorités migratoires et des organismes correspondants.",
       contactEyebrow: "Contact",
       contactTitle: "Commençons à construire ton chemin. Contacte-nous.",
       contactText: "Complète l'évaluation et envoie le résumé par WhatsApp pour coordonner le premier rendez-vous.",
@@ -900,6 +1002,23 @@
       formEyebrow: "Modulo",
       formTitle: "Valutazione iniziale",
       formIntro: "Queste risposte ci aiutano a capire cosa cerca la famiglia e a preparare una prima conversazione concreta.",
+      faqEyebrow: "Domande frequenti",
+      faqTitle: "Dubbi comuni prima di iniziare.",
+      faqIntro: "Risposte chiare per capire il processo senza promesse irrealistiche.",
+      faq1Question: "Cosa include l'accompagnamento di Impact?",
+      faq1Answer: "Include valutazione iniziale, preparazione del profilo, analisi delle opzioni, orientamento per le candidature e follow-up durante le fasi principali del processo.",
+      faq2Question: "Impact garantisce una borsa, ammissione o visto?",
+      faq2Answer: "No. Le decisioni finali dipendono da università, allenatori, organismi ufficiali e consolati. Il nostro ruolo è preparare il caso, organizzare la strategia e guidare con informazioni realistiche.",
+      faq3Question: "Con quanto anticipo conviene iniziare?",
+      faq3Answer: "Idealmente da 12 a 18 mesi prima. Se lo studente è più vicino al diploma, possiamo comunque valutare il caso e vedere quali opzioni restano aperte.",
+      faq4Question: "Quali tipi di borse si possono esplorare?",
+      faq4Answer: "Possiamo analizzare opportunità sportive, accademiche, artistiche o culturali secondo profilo, livello, obiettivi, documentazione e budget familiare.",
+      faq5Question: "Aiutate a scegliere università, corso e città?",
+      faq5Answer: "Sì. Confrontiamo alternative secondo profilo accademico, sport o area, livello di inglese, corso desiderato, budget e tipo di esperienza cercata dalla famiglia.",
+      faq6Question: "Che informazioni servono per la prima valutazione?",
+      faq6Answer: "Età, anno di diploma, livello di inglese, voti o situazione accademica, sport o area di interesse, obiettivi, budget annuale e qualsiasi video, referenza o materiale disponibile.",
+      faq7Question: "Accompagnate pratiche come visto, housing e arrivo?",
+      faq7Answer: "Aiutiamo a organizzare il processo e preparare la documentazione. Ogni pratica dipende dai requisiti dell'università, delle autorità migratorie e degli organismi corrispondenti.",
       contactEyebrow: "Contatto",
       contactTitle: "Iniziamo a costruire il tuo percorso. Contattaci.",
       contactText: "Completa la valutazione e invia il riepilogo via WhatsApp per coordinare il primo incontro.",
