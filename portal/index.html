@@ -192,7 +192,7 @@
   </div>
 </section>
 
-<main class="app-shell">
+<main class="app-shell" id="portalApp" hidden>
   <div class="wrap dashboard">
     <aside class="sidebar">
       <h3>Impact Portal</h3>
@@ -569,7 +569,8 @@
     event.preventDefault();
     const active = [...roleTabs].find(button => button.classList.contains("active"));
     setPanel(active ? active.dataset.role : "admin");
-    document.querySelector(".app-shell").scrollIntoView({behavior:"smooth"});
+    document.querySelector("#portalApp").hidden = false;
+    document.querySelector("#portalApp").scrollIntoView({behavior:"smooth"});
   });
   profileForm.addEventListener("input", updatePreview);
   profileForm.addEventListener("change", updatePreview);
